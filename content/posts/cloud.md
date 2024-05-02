@@ -3,7 +3,8 @@ title = 'コンテナレシピ①'
 date = 2024-05-03T02:56:41+09:00
 draft = false
 categories = ["Server", "Cloud"]
-tags = ["あゆむ", "Docker", "AWS"]
+tags = ["Docker", "AWS"]
+author = ["あゆむ"]
 +++
 
 # 汎用作業用Container(Amazon Linux 2)
