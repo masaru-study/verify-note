@@ -16,7 +16,6 @@ theme = 'mainroad'
 [Params.widgets]
   recent_num = 5
   tags_counter = true
-  tags = true
 
 [Params.widgets.social]
   github = "masaru-study/verify-note"
@@ -35,7 +34,3 @@ theme = 'mainroad'
   Name = "タグ"
   URL = "/tags/"
   weight = 3
-
-[taxonomies]
-  tag = "tags"
-  category = "categories"
