@@ -15,7 +15,7 @@ theme = 'mainroad'
 
 [Params.widgets]
   recent_num = 5
-  tags_counter = enable
+  tags_counter = true
 
 [Params.widgets.social]
   github = "masaru-study/verify-note"
