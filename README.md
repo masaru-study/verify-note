@@ -34,5 +34,6 @@ git commit -m "#コミットコメントを入れる#"
 git push origin #ローカルブランチ名#
 ```
 3. GUIでPull RequestをしてMargeをするとGit Actionが走ります。
+   * Pull Request→New Pull Request→compare:#ローカルブランチ名#選択→Create request→（説明を追加）Create pull request→Merge pull request→Conform Merge
 4. ページを確認して更新されていれば完了
 
