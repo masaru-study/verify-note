@@ -1,11 +1,37 @@
 baseURL = 'https://masaru-study.github.io/verify-note/'
 languageCode = 'ja'
 title = 'まさるの勉強部屋 ハンズオンチーム'
+paginate = "1"
 theme = 'mainroad'
+
 [params]
   subtitle = 'The TEST subtitle'
+
 [Params.sidebar]
   home = "right"
   list = "right"
-  single = "right"
-  widgets = ["search", "recent", "categories", "taglist"]
+  single = "false"
+  widgets = ["search", "recent", "categories", "taglist", "social"]
+
+[Params.widgets]
+  recent_num = 5
+  tags_counter = enable
+
+[Params.widgets.social]
+  github = "masaru-study/verify-note"
+
+[[Menus.main]]
+  Name = "トップ"
+  URL = "/"
+  weight = 1
+
+[[Menus.main]]
+  Name = "カテゴリー"
+  URL = "/categories/"
+  weight = 2
+
+[[Menus.main]]
+  Name = "タグ"
+  URL = "/tags/"
+  weight = 3
+
