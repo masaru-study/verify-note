@@ -4,3 +4,8 @@ title = 'まさるの勉強部屋 ハンズオンチーム'
 theme = 'mainroad'
 [params]
   subtitle = 'The TEST subtitle'
+[Params.sidebar]
+  home = "right"
+  list = "right"
+  single = "right"
+  widgets = ["search", "recent", "categories", "taglist"]
