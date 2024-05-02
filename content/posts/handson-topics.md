@@ -2,13 +2,8 @@
 title = 'Handson Topics'
 date = 2024-05-03T01:15:32+09:00
 draft = false
-<<<<<<< HEAD
-categories = ["General"]
-tags = ["DD Erikson", "nakata", "あゆむ"]
-=======
 gs = ["development", "Hands on", "Topic"]
 categories = ["Development", "やってみることリスト", "DD Erikson"]
->>>>>>> 04503c78c7034d59dd6ba0abe427cf0d1a707647
 +++
 # ハンズオンネタ
 
