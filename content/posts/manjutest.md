@@ -2,6 +2,8 @@
 title = 'Manjutest'
 date = 2024-05-03T00:37:52+09:00
 draft = false
+categories = ["General"]
+tags = ["DD Erikson"]
 +++
 # First test post
 
