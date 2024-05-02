@@ -2,9 +2,6 @@
 title = 'Handson Topics'
 date = 2024-05-03T01:15:32+09:00
 draft = false
-tags:
-  - "General"
-  - "test"
 +++
 # ハンズオンネタ
 
