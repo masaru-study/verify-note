@@ -2,3 +2,5 @@ baseURL = 'https://masaru-study.github.io/verify-note/'
 languageCode = 'ja'
 title = 'まさるの勉強部屋 ハンズオンチーム'
 theme = 'mainroad'
+[params]
+  subtitle = 'The TEST subtitle'
