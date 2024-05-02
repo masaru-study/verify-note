@@ -1,14 +1,14 @@
 +++
-title = 'Tag Cate Test'
+title = 'コンテナレシピ①'
 date = 2024-05-03T02:56:41+09:00
 draft = false
 categories = ["Server", "Cloud"]
 tags = ["あゆむ", "Docker", "AWS"]
 +++
 
-#汎用作業用Container(Amazon Linux 2)
+# 汎用作業用Container(Amazon Linux 2)
 
-'''
+```
 # syntax=docker/dockerfile:1.7
 FROM debian:11
 
@@ -197,4 +197,4 @@ EXPOSE 22
 
 # 起動時に実行するコマンド
 CMD ["/etc/docker-entrypoint.sh"]
-'''
+```
