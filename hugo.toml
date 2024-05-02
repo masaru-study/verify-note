@@ -35,3 +35,6 @@ theme = 'mainroad'
   URL = "/tags/"
   weight = 3
 
+[taxonomies]
+  tag = "tags"
+  category = "categories"
