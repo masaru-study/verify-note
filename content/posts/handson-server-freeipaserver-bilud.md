@@ -41,7 +41,7 @@ $sudo hostnamectl set-hostname sv.freeipa.local
 ```
 * #### /etc/hostsにレコードを追加
 ```
-$echo "192.168.0.102 sv.freeipa.local sv" | sudo tee -a /etc/hosts
+$sudo echo "192.168.0.102 sv.freeipa.local sv" | sudo tee -a /etc/hosts
 ```
 * #### SELinuxの設定
 ```
