@@ -15,7 +15,7 @@
 # ローカルリポジトリ作成
 git init
 # リモートリポジトリに接続
-git remote add origin https://github.com/masaru-study/verify-note.git
+git remote add origin https://github.com/masaru-study/test-verify-note.git
 # リモートリポジトリの内容を取得
 git fetch
 # リモートブランチ一覧
