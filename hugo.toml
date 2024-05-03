@@ -1,4 +1,10 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = ''
+languageCode = 'ja'
+title = 'まさるの勉強部屋 ハンズオンチーム'
 theme = 'hugo-theme-relearn'
+
+[outputs]
+  home = ['html', 'rss', 'search', 'searchpage'] # 検索機能オプション
+
+[params]
+  themeVariant = ['relearn-light', 'relearn-dark', 'auto']
