@@ -1,39 +1,35 @@
-baseURL = 'https://masaru-study.github.io/verify-note/'
+baseURL = ''
 languageCode = 'ja'
 title = 'まさるの勉強部屋 ハンズオンチーム'
-paginate = "3"
-theme = 'mainroad'
+theme = 'hugo-theme-relearn'
+
+[outputs]
+  home = ['html', 'rss', 'search', 'searchpage'] # 検索機能オプション
 
 [params]
-  subtitle = 'The TEST subtitle'
-  readmore = true  # 記事を一括表示しない
-  toc = true  # 記事内での目次作成
+  themeVariant = ['relearn-light', 'relearn-dark', 'auto'] # 背景機能オプション
+  disableNextPrev = false # [次へ]と[前へ]のナビゲーションボタンを隠す
+  ordersectionsby = "weight" # メニューの表示順をweight値に設定
+  disableLandingPageButton = true  # homeエントリを隠す
+  collapsibleMenu = true # メニューの折り畳み機能
+  showVisitedLinks = true # 訪問済みページにチェックを付ける
+  disableLanguageSwitchingButton = true # 言語スイッチャーを隠す
+  disableInlineCopyToClipBoard = true # インラインコードのクリップボードへのコピーを隠す
+  highlightWrap = true # コードブロックを折り返し表示する。
 
-[Params.sidebar]
-  home = "right"  # トップページのサイドバーの場所
-  list = "right"  # 記事一覧ページのサイドバーの場所
-  single = "right"  # 記事ページのサイドバーの場所
-  widgets = ["search", "recent", "categories", "taglist", "social"]
+[menu]
+  [[menu.shortcuts]]
+    identifier = 'ds'
+    name = "<i class='fa-fw fab fa-github'></i> GitHub repo"
+    url = 'https://github.com/masaru-study/test-verify-note.git'
+    weight = 10
 
-[Params.widgets]
-  recent_num = 5  # 最新投稿の記事数
-  categories_counter = true  # カテゴリー内の記事数
-  tags_counter = true  # タグの記事数
+  [[menu.shortcuts]]
+    name = "<i class='fa-fw fas fa-categories'></i> categories"
+    url = 'categories/'
+    weight = 20
 
-[Params.widgets.social]
-  github = "masaru-study/verify-note"
-
-[[Menus.main]]
-  Name = "トップ"
-  URL = "/"
-  weight = 1
-
-[[Menus.main]]
-  Name = "カテゴリー"
-  URL = "/categories/"
-  weight = 2
-
-[[Menus.main]]
-  Name = "タグ"
-  URL = "/tags/"
-  weight = 3
+  [[menu.shortcuts]]
+    name = "<i class='fa-fw fas fa-tags'></i> Tags"
+    url = 'tags/'
+    weight = 30
