@@ -105,13 +105,13 @@ TX100 S3のMegaRAIDで1TBHDDを2台つかってRAID1しようとしたところ�
 9. 実際にアクセスしてファイルが置ければOK
 
 * DDコマンドでRead速度を確認したところ140MB/sぐらいでした
-```
-root@pve:~# dd if=/dev/vg1t/raid1 of=/dev/null bs=16k status=progress
-3366289408 bytes (3.4 GB, 3.1 GiB) copied, 24 s, 140 MB/s^C
-206446+0 records in
-206445+0 records out
-3382394880 bytes (3.4 GB, 3.2 GiB) copied, 24.1147 s, 140 MB/s
-```
+  ```
+  root@pve:~# dd if=/dev/vg1t/raid1 of=/dev/null bs=16k status=progress
+  3366289408 bytes (3.4 GB, 3.1 GiB) copied, 24 s, 140 MB/s^C
+  206446+0 records in
+  206445+0 records out
+  3382394880 bytes (3.4 GB, 3.2 GiB) copied, 24.1147 s, 140 MB/s
+  ```
 
 ### 障害検証
 
