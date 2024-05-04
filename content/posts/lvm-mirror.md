@@ -107,13 +107,13 @@ TX100 S3のMegaRAIDで1TBHDDを2台つかってRAID1しようとしたところ�
 9. 実際にアクセスしてファイルが置ければOK
 
 * DDコマンドでRead速度を確認したところ140MB/sぐらいでした
-  ```
-  root@pve:~# dd if=/dev/vg1t/raid1 of=/dev/null bs=16k status=progress
-  3366289408 bytes (3.4 GB, 3.1 GiB) copied, 24 s, 140 MB/s^C
-  206446+0 records in
-  206445+0 records out
-  3382394880 bytes (3.4 GB, 3.2 GiB) copied, 24.1147 s, 140 MB/s
-  ```
+    ```
+    root@pve:~# dd if=/dev/vg1t/raid1 of=/dev/null bs=16k status=progress
+    3366289408 bytes (3.4 GB, 3.1 GiB) copied, 24 s, 140 MB/s^C
+    206446+0 records in
+    206445+0 records out
+    3382394880 bytes (3.4 GB, 3.2 GiB) copied, 24.1147 s, 140 MB/s
+    ```
 
 ### 障害検証
 
@@ -207,6 +207,8 @@ TX100 S3のMegaRAIDで1TBHDDを2台つかってRAID1しようとしたところ�
 
 fdiskした時に「<font color="red">The backup GPT table is corrupt, but the primary appears OK, so that will be used.</font>」というのが出ることがある。これはパーティションテーブルが読み取れない時に出るらしい。GPTはパーティションテーブルをプライマリ・バックアップと持っているが、今回はバックアップが壊れている状態。
 
+1. fdiskでの確認
+
     ```
     root@pve:~# fdisk -l
     The backup GPT table is corrupt, but the primary appears OK, so that will be used.
@@ -224,7 +226,8 @@ fdiskした時に「<font color="red">The backup GPT table is corrupt, but the p
     /dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
     ```
 
-パーティションテーブルに対して操作を行えばこのエラーは解消される。
+2. パーティションテーブルに対して操作を行えばこのエラーは解消されるので、fdiskで操作を行う。
+
     ```
     root@pve:~# fdisk /dev/sda
 
@@ -266,7 +269,8 @@ fdiskした時に「<font color="red">The backup GPT table is corrupt, but the p
     Syncing disks.
     ```
 
-エラーが消えた
+3. fdiskで確認するとエラーが消えている。
+
     ```
     root@pve:~# fdisk -l
     Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
