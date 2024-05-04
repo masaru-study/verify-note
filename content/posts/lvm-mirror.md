@@ -223,60 +223,60 @@ fdiskした時に「<font color="red">The backup GPT table is corrupt, but the p
     ```
 
 パーティションテーブルに対して操作を行えばこのエラーは解消される。
-```
-root@pve:~# fdisk /dev/sda
+    ```
+    root@pve:~# fdisk /dev/sda
 
-Welcome to fdisk (util-linux 2.38.1).
-Changes will remain in memory only, until you decide to write them.
-Be careful before using the write command.
+    Welcome to fdisk (util-linux 2.38.1).
+    Changes will remain in memory only, until you decide to write them.
+    Be careful before using the write command.
 
-The backup GPT table is corrupt, but the primary appears OK, so that will be used.
-This disk is currently in use - repartitioning is probably a bad idea.
-It's recommended to umount all file systems, and swapoff all swap
-partitions on this disk.
+    The backup GPT table is corrupt, but the primary appears OK, so that will be used.
+    This disk is currently in use - repartitioning is probably a bad idea.
+    It's recommended to umount all file systems, and swapoff all swap
+    partitions on this disk.
 
-# パーティションテーブルを表示する
-Command (m for help): p
+    # パーティションテーブルを表示する
+    Command (m for help): p
 
-Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
-Disk model: Samsung SSD 840 
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: gpt
-Disk identifier: F5A57025-3A16-4AC0-AFA5-48EC657D7B09
+    Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+    Disk model: Samsung SSD 840 
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: gpt
+    Disk identifier: F5A57025-3A16-4AC0-AFA5-48EC657D7B09
 
-Device       Start       End   Sectors   Size Type
-/dev/sda1       34      2047      2014  1007K BIOS boot
-/dev/sda2     2048   2099199   2097152     1G EFI System
-/dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
+    Device       Start       End   Sectors   Size Type
+    /dev/sda1       34      2047      2014  1007K BIOS boot
+    /dev/sda2     2048   2099199   2097152     1G EFI System
+    /dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
 
-# パーティションテーブルを検証する
-Command (m for help): v
-No errors detected.
-Header version: 1.0
-Using 3 out of 128 partitions.
-A total of 0 free sectors is available in 0 segments (the largest is 0 B).
+    # パーティションテーブルを検証する
+    Command (m for help): v
+    No errors detected.
+    Header version: 1.0
+    Using 3 out of 128 partitions.
+    A total of 0 free sectors is available in 0 segments (the largest is 0 B).
 
-# テーブルをディスクに書き込む
-Command (m for help): w
-The partition table has been altered.
-Syncing disks.
-```
+    # テーブルをディスクに書き込む
+    Command (m for help): w
+    The partition table has been altered.
+    Syncing disks.
+    ```
 
 エラーが消えた
-```
-root@pve:~# fdisk -l
-Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
-Disk model: Samsung SSD 840 
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-Disklabel type: gpt
-Disk identifier: F5A57025-3A16-4AC0-AFA5-48EC657D7B09
+    ```
+    root@pve:~# fdisk -l
+    Disk /dev/sda: 119.24 GiB, 128035676160 bytes, 250069680 sectors
+    Disk model: Samsung SSD 840 
+    Units: sectors of 1 * 512 = 512 bytes
+    Sector size (logical/physical): 512 bytes / 512 bytes
+    I/O size (minimum/optimal): 512 bytes / 512 bytes
+    Disklabel type: gpt
+    Disk identifier: F5A57025-3A16-4AC0-AFA5-48EC657D7B09
 
-Device       Start       End   Sectors   Size Type
-/dev/sda1       34      2047      2014  1007K BIOS boot
-/dev/sda2     2048   2099199   2097152     1G EFI System
-/dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
-```
+    Device       Start       End   Sectors   Size Type
+    /dev/sda1       34      2047      2014  1007K BIOS boot
+    /dev/sda2     2048   2099199   2097152     1G EFI System
+    /dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
+    ```
