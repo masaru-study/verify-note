@@ -12,12 +12,9 @@ tags = ["docker", "liuc"]
 https://docs.docker.jp/engine/installation/linux/index.html \
 https://supilog.supisupi.com/blog/2p77qe6np5e4/
 
-PROXMOXのLXCでDockerを動かしたい人は下記も参照\
-https://www.nofuture.tv/using-docker-on-prxmox-lxc-container
-
 ## 構築環境
 ***
-### ハードウェア(LXC)
+### ハードウェア
 * OS：Almalinux9
 * CPU：1core
 * Mem：4G
