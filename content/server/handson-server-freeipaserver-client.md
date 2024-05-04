@@ -1,6 +1,7 @@
 +++
 title = 'FreeIPA クライアント編'
 date = 2024-05-03T01:15:32+09:00
+weight = 2
 draft = false
 categories = ["Server"]
 tags = ["freeipa", "lpic300"]
