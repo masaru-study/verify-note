@@ -22,6 +22,7 @@ title = ""
 * ~~portainer~~（完了）
 * ~~Cockpit(RHEL)~~（完了）
 * NFS
+* k8s
 * Ansible
 * Terraform
 
