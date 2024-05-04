@@ -1,9 +1,11 @@
 +++
-title = 'Lvm Mirror'
+title = 'LVMを使用したミラー（RAID1）構成をした話'
 date = 2024-05-04T17:18:05+09:00
+weight = 12
 draft = false
 tags = ["Hands on", "Storage", "Linux", "LPIC/LinuC", "DD Erikson"]
 categories = ["Server", "DD Erikson"]
+author.name = ["DD Erikson"]
 +++
 # LVMを使用したミラー（RAID1）構成をした話
 
