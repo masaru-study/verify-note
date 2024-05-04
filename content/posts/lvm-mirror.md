@@ -2,6 +2,8 @@
 title = 'Lvm Mirror'
 date = 2024-05-04T17:18:05+09:00
 draft = false
+tags = ["Hands on", "Storage", "Linux", "LPIC/LinuC", "DD Erikson"]
+categories = ["Server", "DD Erikson"]
 +++
 # LVMを使用したミラー（RAID1）構成をした話
 
