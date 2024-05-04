@@ -1,5 +1,5 @@
 +++
-title = 'LVMを使用したミラー（RAID1）構成をした話'
+title = 'LVM-MIRROR'
 date = 2024-05-04T17:18:05+09:00
 weight = 12
 draft = false
