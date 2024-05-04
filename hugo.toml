@@ -7,4 +7,29 @@ theme = 'hugo-theme-relearn'
   home = ['html', 'rss', 'search', 'searchpage'] # 検索機能オプション
 
 [params]
-  themeVariant = ['relearn-light', 'relearn-dark', 'auto']
+  themeVariant = ['relearn-light', 'relearn-dark', 'auto'] # 背景機能オプション
+  disableNextPrev = false # [次へ]と[前へ]のナビゲーションボタンを隠す
+  ordersectionsby = "weight" # メニューの表示順をweight値に設定
+  disableLandingPageButton = true  # homeエントリを隠す
+  collapsibleMenu = true # メニューの折り畳み機能
+  showVisitedLinks = true # 訪問済みページにチェックを付ける
+  disableLanguageSwitchingButton = true # 言語スイッチャーを隠す
+  disableInlineCopyToClipBoard = true # インラインコードのクリップボードへのコピーを隠す
+  highlightWrap = true # コードブロックを折り返し表示する。
+
+[menu]
+  [[menu.shortcuts]]
+    identifier = 'ds'
+    name = "<i class='fa-fw fab fa-github'></i> GitHub repo"
+    url = 'https://github.com/masaru-study/test-verify-note.git'
+    weight = 10
+
+  [[menu.shortcuts]]
+    name = "<i class='fa-fw fas fa-categories'></i> categories"
+    url = 'categories/'
+    weight = 20
+
+  [[menu.shortcuts]]
+    name = "<i class='fa-fw fas fa-tags'></i> Tags"
+    url = 'tags/'
+    weight = 30
