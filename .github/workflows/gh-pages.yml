@@ -25,28 +25,51 @@ defaults:
     shell: bash
 
 jobs:
-  # ビルドジョブ
   build:
+    # ジョブに必要な定義
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.125.4
+
+    # Discord通知有無を別jobに渡す
+    outputs:
+      files_exists: ${{ steps.no_discord.outputs.files_exists }}
+
     steps:
+      # Hugoのインストール
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb          
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      # Hugo依存関係パッケージのインストール
       - name: Install Dart Sass
         run: sudo snap install dart-sass
+
+      # ブランチの内容をチェックアウト（ダウンロード）する
       - name: Checkout
         uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
+
+      # Github Pagesを設定
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+
+      # Github Pages依存関係パッケージのインストール
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+
+      # no_discord.txtがあるか確認。
+      - name: Check file notification
+        id: no_discord
+        uses: andstor/file-existence-action@v1
+        with:
+          files: ./no_discord.txt
+
+      # Hugoでビルドする
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
@@ -56,20 +79,56 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"          
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      # ビルドした結果をアップロード
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  # デプロイジョブ
   deploy:
+    # ジョブに必要な定義
+    runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
+
     steps:
+      # ビルドした結果をデプロイ
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # Discord通知内容のデバッグ用
+      #- name: Logging
+      #  run: |
+      #    echo "${{toJSON(github.event)}}"
+
+      # Discord通知内容を格納
+      - name: Notification message create
+        id: message
+        run: |
+          {
+            echo 'TEXT<<EOF'
+            echo "${{ github.event.head_commit.author.name }} がページを更新しました。"
+            echo "【${{ github.event.head_commit.message }}】"
+            echo "https://masaru-study.github.io/verify-note/"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      # Discord通知有無
+      - name: Notification True or False
+        run: echo "No Notification = ${{ needs.build.outputs.files_exists }}"
+
+      # Discord通知を実施。ただし、no_discord.txtがあった場合は行わない。
+      - name: Send Discord notification
+        if: needs.build.outputs.files_exists != 'true'
+        env:
+          #DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
+          DISCORD_USERNAME: "ハンズオンチーム"
+        uses: Ilshidur/action-discord@master
+        with:
+          args: ${{ steps.message.outputs.text }}
