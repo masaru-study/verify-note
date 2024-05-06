@@ -32,7 +32,6 @@ https://supilog.supisupi.com/blog/2p77qe6np5e4/
 - wget
 - docker-ce
 - docker-compose(git からダウンロード)
-  ※LXC の場合、上記以外にもパッケージが必要になる場合があります。
 
 ## 構築
 
