@@ -2,6 +2,7 @@ baseURL = ''
 languageCode = 'ja'
 title = 'まさるの勉強部屋 ハンズオンチーム'
 theme = 'hugo-theme-relearn'
+canonifyurls = true # 相対パスではなく baseurl を基点とした絶対パスにする
 
 [outputs]
   home = ['html', 'rss', 'search', 'searchpage'] # 検索機能オプション

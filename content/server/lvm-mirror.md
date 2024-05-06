@@ -56,7 +56,7 @@ TX100 S3 の MegaRAID で 1TBHDD を 2 台つかって RAID1 しようとした�
 
 ## 概念図
 
-![概念図](../../img/lvm-mirror.svg)
+![概念図](/img/lvm-mirror.svg)
 
 ## やったこと
 

@@ -65,7 +65,7 @@ jobs:
       # no_discord.txtがあるか確認。
       - name: Check file notification
         id: no_discord
-        uses: andstor/file-existence-action@v1
+        uses: andstor/file-existence-action@v3
         with:
           files: ./no_discord.txt
 
@@ -126,9 +126,9 @@ jobs:
       - name: Send Discord notification
         if: needs.build.outputs.files_exists != 'true'
         env:
-          #DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          #DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_STAGING }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
           DISCORD_USERNAME: "ハンズオンチーム"
-        uses: Ilshidur/action-discord@master
+        uses: Ilshidur/action-discord@0.3.2
         with:
           args: ${{ steps.message.outputs.text }}
