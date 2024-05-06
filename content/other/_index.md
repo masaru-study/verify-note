@@ -4,4 +4,4 @@ title = "Other"
 weight = 5
 +++
 
-Server / Network / Cloud いずれにも属さないカテゴリです。
+いずれのカテゴリにも属さない技術文書置き場です。
