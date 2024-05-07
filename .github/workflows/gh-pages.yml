@@ -36,6 +36,35 @@ jobs:
       files_exists: ${{ steps.no_discord.outputs.files_exists }}
 
     steps:
+      # ブランチの内容をチェックアウト（ダウンロード）する
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      # 記事の必須要件をチェック。
+      - name: Front Matter check
+        run: |
+          er_cnt=0
+          # _index.md以外の記事には、Authorタグが含まれている。
+          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d"); do
+            tag_author=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Author:/p")
+            if [ -z "$tag_author" ]; then
+              echo "::error:: No Tag \"Author\": $file"
+              er_cnt=$(expr $er_cnt + 1)
+            fi
+          done
+          # _index.md以外またはGeneralカテゴリ以外の記事には、Levelタグが含まれている。
+          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d"); do
+            tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
+            if [ -z "$tag_level" ]; then
+              echo "::error:: No Tag \"Level\": $file"
+              er_cnt=$(expr $er_cnt + 1)
+            fi
+          done
+          if [ $er_cnt -eq 0 ]; then exit 0; else exit 1; fi
+
       # Hugoのインストール
       - name: Install Hugo CLI
         run: |
@@ -45,13 +74,6 @@ jobs:
       # Hugo依存関係パッケージのインストール
       - name: Install Dart Sass
         run: sudo snap install dart-sass
-
-      # ブランチの内容をチェックアウト（ダウンロード）する
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0
 
       # Github Pagesを設定
       - name: Setup Pages

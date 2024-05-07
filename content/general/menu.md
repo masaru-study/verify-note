@@ -4,7 +4,7 @@ date = 2024-05-06T22:37:32+09:00
 weight = 1
 draft = false
 categories = ["General"]
-tags = ["Autor:ALL Member"]
+tags = ["Author:ALL Member"]
 +++
 
 これらは、これから行う予定のあるハンズオンのいわば"ネタ"です。

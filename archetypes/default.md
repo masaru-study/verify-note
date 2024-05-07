@@ -2,7 +2,7 @@
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
 date = {{ .Date }}
 draft = true
-weight = 1
+weight = 99
 categories = [""]
-tags = ["Autor:", "", ""]
+tags = ["Autor:", "Level:", ""]
 +++

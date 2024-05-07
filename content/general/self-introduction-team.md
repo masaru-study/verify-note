@@ -4,7 +4,7 @@ date = 2024-05-06T22:06:11+09:00
 weight = 2
 draft = false
 categories = ["General"]
-tags = ["Autor:ALL Member", "自己紹介"]
+tags = ["Author:ALL Member", "自己紹介"]
 +++
 
 ## ハンズオンチームとは何？

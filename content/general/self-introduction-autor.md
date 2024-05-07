@@ -4,17 +4,17 @@ date = 2024-05-05T05:06:21+09:00
 weight = 3
 draft = false
 categories = ["General"]
-tags = ["Autor:ALL Member", "自己紹介"]
+tags = ["Author:ALL Member", "自己紹介"]
 +++
 
-## Autor: nakata
+## Author: nakata
 
 工事中
 
-## Autor: DD Erikson
+## Author: DD Erikson
 
 工事中
 
-## Autor: あゆむ
+## Author: あゆむ
 
 工事中
