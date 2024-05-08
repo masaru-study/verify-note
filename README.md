@@ -11,25 +11,25 @@
 1. Hugo をローカルに入れます。
 2. git をローカルに入れます。
 
-3. ローカルリポジトリ作成
+3. ローカルリポジトリを作成する
 
 ```bash
 git init
 ```
 
-4. リモートリポジトリに接続
+4. リモートリポジトリに接続する
 
 ```bash
 git remote add origin https://github.com/masaru-study/verify-note.git
 ```
 
-5. リモートリポジトリの内容を取得
+5. リモートリポジトリの内容を取得する
 
 ```bash
 git fetch
 ```
 
-6. ローカルブランチ作成
+6. ローカルブランチを作成する
 
 ```bash
 git checkout -b #ローカルブランチ名# origin/main
@@ -44,8 +44,9 @@ content/#カテゴリ名#/#ページ名#.mdを手動で新規作成
 ```
 
 8. 記事の Front Matter を編集する
-   > [!CAUTION]
-   > 投稿フォルダによって必須タグ要件が異なりますので付録を参照してください。
+
+> [!CAUTION]
+> 投稿フォルダによって必須タグ要件が異なりますので付録を参照してください。
 
 ```bash
 content/#カテゴリ名#/#ページ名#.md
@@ -63,7 +64,7 @@ content/#カテゴリ名#/#ページ名#.md
 git add -A
 ```
 
-11. ローカルリポジトリに登録
+11. ローカルリポジトリに登録する
 
 ```bash
 git commit -m "#コミットコメントを入れる#"
@@ -87,6 +88,9 @@ git push origin #ローカルブランチ名#
 
 14. [公開 Web ページ](https://masaru-study.github.io/verify-note/)を確認して更新されていれば完了
 
+> [!TIP]
+> ２回目以降の記事投稿は手順 5 ～ 14 を行ってください。
+
 ## 付録:Discord 通知
 
 ### 通知の著者名
@@ -105,7 +109,7 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 以下のどちらかの条件を満たすと Discord 通知を行わなくなります。
 
 - プロジェクトのルートディレクトリに no_discord.txt を配置する
-- Merge Message の本文に「no_discord」という文字列を含む(上記手順の 13-7 ～ 13-8)
+- Merge Message の本文に「no_discord」という文字列を含む(上記手順の 13-6 ～ 13-7)
 
 ## 付録:ディレクトリ構造
 
