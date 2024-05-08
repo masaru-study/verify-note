@@ -1,7 +1,7 @@
 # ハンズオンチームの秘密基地
 
-> [!IMPORTANT]
-> ここはステージング環境です。
+    > [!IMPORTANT]
+    > ここはステージング環境です。
 
 ## ここはなに？
 
@@ -11,56 +11,104 @@
 
 - 権限のあるメンバーは hugo を使用して記事を投稿できます。
 
-1. Hugo をローカルに入れます
-2. git を使います。
+1. Hugo をローカルに入れます。
+2. git をローカルに入れます。
 
-```
-# ローカルリポジトリ作成
+3. ローカルリポジトリ作成
+
+```bash
 git init
+```
 
-# リモートリポジトリに接続
+4. リモートリポジトリに接続
+
+```bash
 git remote add origin https://github.com/masaru-study/-----test-----verify-note.git
+```
 
-# リモートリポジトリの内容を取得
+5. リモートリポジトリの内容を取得
+
+```bash
 git fetch
+```
 
-# ローカルブランチ作成
+6. ローカルブランチ作成
+
+```bash
 git checkout -b #ローカルブランチ名# origin/main
+```
 
-# hugoでコンテンツを作成する
+7. hugo でコンテンツを作成する
+
+```bash
 hugo new content #カテゴリ名#/#ページ名#.md
 もしくは
 content/#カテゴリ名#/#ページ名#.mdを手動で新規作成
+```
 
-# 記事を編集する（draft = falseにしないとgit actionが走らないです…）
+8. 記事の Front Matter を編集する
+   > [!CAUTION]
+   > 投稿フォルダによって必須タグ要件が異なりますので付録を参照してください。
+
+```bash
 content/#カテゴリ名#/#ページ名#.md
+```
 
-# ワークツリーからインデックスへのファイルの登録を行う
+9. 記事の本文を編集する
+
+```bash
+content/#カテゴリ名#/#ページ名#.md
+```
+
+10. ワークツリーからインデックスへのファイルの登録を行う
+
+```bash
 git add -A
+```
 
-# ローカルリポジトリに登録
+11. ローカルリポジトリに登録
+
+```bash
 git commit -m "#コミットコメントを入れる#"
+```
 
-# リモートリポジトリにコピーする
+12. リモートリポジトリにコピーする
+
+```bash
 git push origin #ローカルブランチ名#
 ```
 
-3. [Github リポジトリ](https://github.com/masaru-study/-----test-----verify-note)に Web アクセスして結合する。
-   1. Pull Request
-   2. New Pull Request
-   3. base:main ← compare:#ローカルブランチ名#
-   4. Create request
-   5. （説明を追加）
-   6. Create pull request
-   7. Merge pull request
-   8. Conform Merge
-4. [公開 Web ページ](https://masaru-study.github.io/-----test-----verify-note/)を確認して更新されていれば完了
+13. [Github リポジトリ](https://github.com/masaru-study/-----test-----verify-note)に Web アクセスして結合する。
+
+    1. Pull Request
+    2. New Pull Request
+    3. base:main ← compare:#ローカルブランチ名#
+    4. Create request
+    5. Create pull request
+    6. Merge pull request
+    7. Confirm Merge
+
+14. [公開 Web ページ](https://masaru-study.github.io/-----test-----verify-note/)を確認して更新されていれば完了
 
 ## 付録:Discord 通知
 
+### 通知の著者名
+
+Github 上の名前が反映されます。デフォルトはアカウント ID です。  
+日本語名にしたい場合は、アカウント設定の Public profile の Name を変更してください。
+
+### 通知の投稿内容文
+
+Merge Message の本文が表示されます。複数行も表示可能です。(上記手順の 13-6 ～ 13-7)  
+なお、タイトル文は表示されません。
+![Merge Message](./.github/README/MergeMessage.PNG)
+
 ### 通知の無効化
 
-プロジェクトのルートディレクトリに no_discord.txt を配置すると Discord 通知を行わなくなります。
+以下のどちらかの条件を満たすと Discord 通知を行わなくなります。
+
+- プロジェクトのルートディレクトリに no_discord.txt を配置する
+- Merge Message の本文に「no_discord」という文字列を含む(上記手順の 13-7 ～ 13-8)
 
 ### 通知のテスト
 
@@ -82,19 +130,19 @@ git push origin #ローカルブランチ名#
 │   ├── _index.md         ・・・トップページの記事ファイル。
 │   │
 │   ├── cloud             ・・・Cloudカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md
+│   │   ├── _index.md           必須タグ：Author、Level
 │   │   └── ＊＊＊.md
 │   ├── general           ・・・Generalカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md
+│   │   ├── _index.md           必須タグ：Author
 │   │   └── ＊＊＊.md
 │   ├── network           ・・・Networkカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md
+│   │   ├── _index.md           必須タグ：Author、Level
 │   │   └── ＊＊＊.md
 │   ├── other             ・・・Otherカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md
+│   │   ├── _index.md           必須タグ：Author
 │   │   └── ＊＊＊.md
 │   └── server            ・・・Serverカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│       ├── _index.md
+│       ├── _index.md           必須タグ：Author、Level
 │       └── ＊＊＊.md
 │
 ├── static
