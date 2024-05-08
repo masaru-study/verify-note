@@ -33,7 +33,7 @@ jobs:
 
     # Discord通知有無を別jobに渡す
     outputs:
-      files_exists: ${{ steps.no_discord.outputs.files_exists }}
+      skip_notification: ${{ steps.decision.outputs.skip_notification }}
 
     steps:
       # ブランチの内容をチェックアウト（ダウンロード）する
@@ -55,8 +55,8 @@ jobs:
               er_cnt=$(expr $er_cnt + 1)
             fi
           done
-          # _index.md以外またはGeneralカテゴリ以外の記事には、Levelタグが含まれている。
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d"); do
+          # _index.md以外またはGeneral、Otherカテゴリ以外の記事には、Levelタグが含まれている。
+          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d"); do
             tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
             if [ -z "$tag_level" ]; then
               echo "::error:: No Tag \"Level\": $file"
@@ -64,6 +64,33 @@ jobs:
             fi
           done
           if [ $er_cnt -eq 0 ]; then exit 0; else exit 1; fi
+
+      # ルートディレクトリにno_discord.txtがあるか確認。
+      - name: Check notification no_file
+        id: no_file
+        uses: andstor/file-existence-action@v3
+        with:
+          files: ./no_discord.txt
+
+      # Merge Messageの本文内にno_discordが含まれているか確認。
+      - name: Check notification no_message
+        id: no_message
+        run: |
+          if [ -n "$(echo "${{ github.event.head_commit.message }}" | sed -ne "/[Nn][Oo]_[Dd][Ii][Ss][Cc][Oo][Rr][Dd]/p")" ]; then
+            echo "message_exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "message_exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      # 通知条件の判断結果を出力。
+      - name: Decision notification
+        id: decision
+        run: |
+          if [ ${{ steps.no_file.outputs.files_exists }} = 'true' ] || [ ${{ steps.no_message.outputs.message_exists }} = 'true' ]; then
+            echo "skip_notification=true" >> $GITHUB_OUTPUT
+          else
+            echo "skip_notification=false" >> $GITHUB_OUTPUT
+          fi
 
       # Hugoのインストール
       - name: Install Hugo CLI
@@ -83,13 +110,6 @@ jobs:
       # Github Pages依存関係パッケージのインストール
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
-
-      # no_discord.txtがあるか確認。
-      - name: Check file notification
-        id: no_discord
-        uses: andstor/file-existence-action@v3
-        with:
-          files: ./no_discord.txt
 
       # Hugoでビルドする
       - name: Build with Hugo
@@ -123,11 +143,15 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # Discord通知内容のデバッグ用
-      #- name: Logging
-      #  run: |
-      #    echo "${{toJSON(github.event)}}"
+  Notification:
+    # ジョブに必要な定義
+    runs-on: ubuntu-latest
+    needs: deploy
 
+    # 通知条件を満たしていない場合はジョブ自体をスキップ。
+    if: needs.build.outputs.skip_notification != 'true'
+
+    steps:
       # Discord通知内容を格納
       - name: Notification message create
         id: message
@@ -135,18 +159,13 @@ jobs:
           {
             echo 'TEXT<<EOF'
             echo "${{ github.event.head_commit.author.name }} がページを更新しました。"
-            echo "【${{ github.event.head_commit.message }}】"
+            echo "【 $(echo "${{ github.event.head_commit.message }}" | sed -e "1,2d") 】"
             echo "https://masaru-study.github.io/verify-note/"
             echo EOF
           } >> "$GITHUB_OUTPUT"
 
-      # Discord通知有無
-      - name: Notification True or False
-        run: echo "No Notification = ${{ needs.build.outputs.files_exists }}"
-
-      # Discord通知を実施。ただし、no_discord.txtがあった場合は行わない。
-      - name: Send Discord notification
-        if: needs.build.outputs.files_exists != 'true'
+      # Discord通知を実施。
+      - name: Send Discord
         env:
           #DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_STAGING }}
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
