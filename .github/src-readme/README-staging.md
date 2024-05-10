@@ -75,13 +75,19 @@
    git fetch
    ```
 
-   5. リモートリポジトリ内の main ブランチに追従する、ローカルリポジトリ内の default ブランチを作ります。
+   5. サブモジュールリポジトリの内容を取得します。
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+   6. リモートリポジトリ内の main ブランチに追従する、ローカルリポジトリ内の default ブランチを作ります。
 
    ```bash
    git branch default origin/main
    ```
 
-   6. 実際に変更を加える、ローカルリポジトリ内の post/onamae ブランチを作ります。
+   7. 実際に変更を加える、ローカルリポジトリ内の post/onamae ブランチを作ります。
 
    ```bash
    git branch post/onamae
@@ -151,7 +157,7 @@
    git push origin
    ```
 
-7. [Github リポジトリ](https://masaru-study.github.io/-----test-----verify-note/)に Web アクセスして結合する。
+7. [Github リポジトリ](https://github.com/masaru-study/-----test-----verify-note/)に Web アクセスして結合する。
 
    1. Pull Request
    2. New Pull Request
