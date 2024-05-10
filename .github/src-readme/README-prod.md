@@ -11,6 +11,9 @@
 > [!TIP]
 > ２回目以降の記事投稿は手順 6 ～ 8 を行ってください。
 
+> [!IMPORTANT]
+> 手順内の"お名前"や"onamae"と言った文字列は任意の文字列に書き換えてください。
+
 1. Hugo をローカルにインストールします。
 
 2. git をローカルにインストールします。
@@ -72,19 +75,25 @@
    git fetch
    ```
 
-   5. サブモジュールリポジトリの内容を取得します。
-
-   ```bash
-   git submodule update --init --recursive
-   ```
-
-   6. リモートリポジトリ内の main ブランチに追従する、ローカルリポジトリ内の default ブランチを作ります。
+   5. リモートリポジトリ内の main ブランチに追従する、ローカルリポジトリ内の default ブランチを作ります。
 
    ```bash
    git branch default origin/main
    ```
 
-   7. 実際に変更を加える、ローカルリポジトリ内の post/onamae ブランチを作ります。
+   6. 使うブランチを default ブランチに変更します。
+
+   ```bash
+   git checkout default
+   ```
+
+   7. サブモジュールリポジトリの内容を取得します。
+
+   ```bash
+   git submodule update --init --recursive
+   ```
+
+   8. 実際に変更を加える、ローカルリポジトリ内の post/onamae ブランチを作ります。
 
    ```bash
    git branch post/onamae
