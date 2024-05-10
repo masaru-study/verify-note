@@ -199,7 +199,7 @@ jobs:
       # Discord通知を実施。
       - name: Send Discord
         env:
-          ISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
           DISCORD_USERNAME: "ハンズオンチーム"
         uses: Ilshidur/action-discord@0.3.2
         with:
