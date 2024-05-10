@@ -1,4 +1,4 @@
-name: Deploy Hugo site to Pages
+name: BUILD-DEPLIY-NOTIFICATION
 
 # トリガー
 on:
@@ -25,6 +25,7 @@ defaults:
     shell: bash
 
 jobs:
+  # ビルドジョブ
   build:
     # ジョブに必要な定義
     runs-on: ubuntu-latest
@@ -129,6 +130,7 @@ jobs:
         with:
           path: ./public
 
+  # デプロイジョブ
   deploy:
     # ジョブに必要な定義
     runs-on: ubuntu-latest
@@ -143,13 +145,14 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  Notification:
+  # Discord通知ジョブ-ステージング環境用
+  Notification-Staging:
     # ジョブに必要な定義
     runs-on: ubuntu-latest
     needs: deploy
 
     # 通知条件を満たしていない場合はジョブ自体をスキップ。
-    if: needs.build.outputs.skip_notification != 'true'
+    if: needs.build.outputs.skip_notification != 'true' && github.repository == 'masaru-study/-----test-----verify-note'
 
     steps:
       # Discord通知内容を格納
@@ -159,7 +162,7 @@ jobs:
           {
             echo 'TEXT<<EOF'
             echo "${{ github.event.head_commit.author.name }} がページを更新しました。"
-            echo "【 $(echo "${{ github.event.head_commit.message }}" | sed -e "1,2d") 】"
+            echo "$(echo "${{ github.event.head_commit.message }}" | sed -e "1,2d")"
             echo "https://masaru-study.github.io/verify-note/"
             echo EOF
           } >> "$GITHUB_OUTPUT"
@@ -167,8 +170,36 @@ jobs:
       # Discord通知を実施。
       - name: Send Discord
         env:
-          #DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_STAGING }}
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_STAGING }}
+          DISCORD_USERNAME: "ハンズオンチーム"
+        uses: Ilshidur/action-discord@0.3.2
+        with:
+          args: ${{ steps.message.outputs.text }}
+
+  # Discord通知ジョブ-本番環境用
+  Notification-Prod:
+    # ジョブに必要な定義
+    runs-on: ubuntu-latest
+    needs: deploy
+    if: needs.build.outputs.skip_notification != 'true' && github.repository == 'masaru-study/verify-note'
+
+    steps:
+      # Discord通知内容を格納
+      - name: Notification message create
+        id: message
+        run: |
+          {
+            echo 'TEXT<<EOF'
+            echo "${{ github.event.head_commit.author.name }} がページを更新しました。"
+            echo "$(echo "${{ github.event.head_commit.message }}" | sed -e "1,2d")"
+            echo "https://masaru-study.github.io/verify-note/"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+
+      # Discord通知を実施。
+      - name: Send Discord
+        env:
+          ISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_NOTICE }}
           DISCORD_USERNAME: "ハンズオンチーム"
         uses: Ilshidur/action-discord@0.3.2
         with:
