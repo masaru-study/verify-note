@@ -1,0 +1,28 @@
++++
+title = "著者紹介"
+date = 2024-05-05T05:06:21+09:00
+weight = 3
+draft = false
+categories = ["General"]
+tags = ["Author:ALL Member", "自己紹介"]
++++
+
+## Author: nakata
+
+工事中
+
+## Author: DD Erikson
+
+工事中
+
+## Author: あゆむ
+
+あゆむです！  
+インフラ系は満遍なく触ってきましたが、最近はよく Cloud 系の技術触ってます。AWS 面白い！！  
+IT 系以外の趣味は以下です。たまには息抜きで趣味のお話もしたいです～
+
+- 乗り物に乗ること
+  - 車、鉄道、飛行機、船
+  - バイク（免許取りたい）
+- オンラインゲーム
+  - FF14、遊戯王 MD
