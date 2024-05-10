@@ -141,18 +141,18 @@
    git commit -m "#コミットコメントを入れる#"
    ```
 
-   10. ローカルリポジトリ内の post/onamae ブランチをリモートリポジトリ内の post/onamae ブランチに適用します。
+   10. リモートリポジトリ内の post/onamae ブランチに適用します。
        初回適用時はリモートリポジトリ内の post/onamae ブランチの新規作成になります。
 
    ```bash
-   git push origin post/onamae
+   git push origin
    ```
 
 7. [Github リポジトリ](https://github.com/masaru-study/verify-note)に Web アクセスして結合する。
 
    1. Pull Request
    2. New Pull Request
-   3. base:main ← compare:#ローカルブランチ名#
+   3. base:main ← compare:post/onamae
    4. Create request
    5. Create pull request
    6. Merge pull request
