@@ -1,7 +1,7 @@
 +++
 archetype = "chapter"
 title = "Cloud"
-weight = 4
+weight = 5
 +++
 
 AWS などの技術文書置き場です。
