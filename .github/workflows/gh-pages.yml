@@ -56,8 +56,8 @@ jobs:
               er_cnt=$(expr $er_cnt + 1)
             fi
           done
-          # _index.md以外またはGeneral、Otherカテゴリ以外の記事には、Levelタグが含まれている。
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d"); do
+          # _index.md以外またはGeneral、Other、tutorialカテゴリ以外の記事には、Levelタグが含まれている。
+          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d" | sed -e "/content\/tutorial/d"); do
             tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
             if [ -z "$tag_level" ]; then
               echo "::error:: No Tag \"Level\": $file"

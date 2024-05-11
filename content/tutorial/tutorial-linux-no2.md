@@ -1,10 +1,10 @@
 +++
-title = '【Linuxチュートリアル】No.2 基本操作編'
+title = '【Linux】No.2 基本操作編'
 date = 2024-05-03T01:15:32+09:00
 weight = 1
 draft = false
-categories = ["Server"]
-tags = ["Author:nakata", "Level:初級", "LPIC1"]
+categories = ["Tutorial"]
+tags = ["Author:nakata", "LPIC1"]
 +++
 
 ## 目次
