@@ -1,13 +1,33 @@
 +++
-title = "コンテナレシピ-Portainerサーバー-"
+title = "Dockerレシピ -Portainer Server-"
 date = 2024-05-05T03:36:26+09:00
-weight = 1
+weight = 2
 draft = false
 categories = ["Server", "Cloud"]
 tags = ["Author:あゆむ", "Level:中級", "Docker"]
 +++
 
-## docker-compose.yml
+## 使い方
+
+### 接続方法
+
+工事中
+
+### データ保存方法
+
+工事中
+
+### パスワード変更方法
+
+工事中
+
+## パラメータシート
+
+### ディレクトリ構造
+
+工事中
+
+### docker-compose.yml
 
 ```yml
 services:
@@ -38,7 +58,7 @@ networks:
     external: true
 ```
 
-## Dockerfile
+### Dockerfile
 
 ```Dockerfile
 # syntax=docker/dockerfile:1.7

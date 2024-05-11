@@ -1,13 +1,33 @@
 +++
-title = "コンテナレシピ-汎用Linux-"
+title = "Dockerレシピ -汎用Linux-"
 date = 2024-05-03T02:56:41+09:00
-weight = 1
+weight = 3
 draft = false
 categories = ["Server", "Cloud"]
 tags = ["Author:あゆむ", "Level:中級", "Docker"]
 +++
 
-## docker-compose.yml
+## 使い方
+
+### 接続方法
+
+工事中
+
+### データ保存方法
+
+工事中
+
+### パスワード変更方法
+
+工事中
+
+## パラメータシート
+
+### ディレクトリ構造
+
+工事中
+
+### docker-compose.yml
 
 ```yml
 services:
@@ -25,11 +45,6 @@ services:
       - type: bind
         source: "./bind/host/"
         target: "/host/"
-    logging:
-      driver: "fluentd"
-      options:
-        fluentd-address: localhost:9101
-        tag: "docker.{{.Name}}"
     extra_hosts:
       - host.docker.internal:host-gateway
     ports:
@@ -46,7 +61,7 @@ secrets:
     file: ./bind/secrets/PW.txt
 ```
 
-## Dockerfile
+### Dockerfile
 
 ```Dockerfile
 # syntax=docker/dockerfile:1.7
