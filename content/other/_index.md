@@ -1,7 +1,7 @@
 +++
 archetype = "chapter"
 title = "Other"
-weight = 5
+weight = 6
 +++
 
 いずれのカテゴリにも属さない技術文書置き場です。
