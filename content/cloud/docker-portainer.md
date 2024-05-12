@@ -1,10 +1,10 @@
 +++
 title = "Dockerレシピ -Portainer Server-"
 date = 2024-05-05T03:36:26+09:00
-weight = 2
 draft = false
+weight = 2
 categories = ["Server", "Cloud"]
-tags = ["Author:あゆむ", "Level:中級", "Docker"]
+tags = ["Author:あゆむ", "Level:中級", "Type:Knowledge", "Docker"]
 +++
 
 ## 使い方

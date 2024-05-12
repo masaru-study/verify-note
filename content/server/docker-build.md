@@ -4,7 +4,7 @@ date = 2024-05-04T00:00:00+09:00
 weight = 3
 draft = false
 categories = ["Server"]
-tags = ["Author:nakata", "Level:中級", "Docker", "LinuC"]
+tags = ["Author:nakata", "Level:中級", "Type:Handson", "Docker", "LinuC"]
 +++
 
 ## 参考サイト

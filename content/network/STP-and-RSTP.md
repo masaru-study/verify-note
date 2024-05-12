@@ -4,7 +4,7 @@ date = 2024-05-05T05:36:53+09:00
 weight = 1
 draft = false
 categories = ["Network"]
-tags = ["Author:DD Erikson", "Level:中級", "CCNA", "Spanning Tree Protocol"]
+tags = ["Author:DD Erikson", "Level:中級", "Type:Knowledge", "CCNA", "Spanning Tree Protocol"]
 +++
 
 # STP と RSTP

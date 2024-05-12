@@ -4,7 +4,7 @@ date = 2024-05-10T00:45:25+09:00
 draft = false
 weight = 1
 categories = ["Network"]
-tags = ["Author:DD Erikson", "Level:???", "Network Architecture"]
+tags = ["Author:DD Erikson", "Level:???", "Type:Knowledge", "Network Architecture"]
 +++
 
 # 三層アーキテクチャメモ
