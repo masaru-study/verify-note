@@ -128,8 +128,12 @@
    5. hugo でコンテンツを作成します。
 
    ```bash
-   hugo new content #カテゴリ名#/#ページ名#.md
+   hugo new #カテゴリ名#/#ページ名#.md
    ```
+
+   > [!TIP]
+   > hugo new --kind=●●● #カテゴリ名#/#ページ名#.md 　と付けるとテンプレートが読み込まれます。
+   > 対応テンプレートは handson と know です。
 
    6. 記事の Front Matter を編集します。
       投稿フォルダによって必須タグ要件が異なりますので付録を参照してください。
@@ -203,19 +207,19 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 │   ├── _index.md         ・・・トップページの記事ファイル。
 │   │
 │   ├── cloud             ・・・Cloudカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author、Level
+│   │   ├── _index.md           必須タグ：Author、Level、Type
 │   │   └── ＊＊＊.md
 │   ├── general           ・・・Generalカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
 │   │   ├── _index.md           必須タグ：Author
 │   │   └── ＊＊＊.md
 │   ├── network           ・・・Networkカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author、Level
+│   │   ├── _index.md           必須タグ：Author、Level、Type
 │   │   └── ＊＊＊.md
 │   ├── other             ・・・Otherカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author
+│   │   ├── _index.md           必須タグ：Author、Type
 │   │   └── ＊＊＊.md
 │   ├── server            ・・・Serverカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author、Level
+│   │   ├── _index.md           必須タグ：Author、Level、Type
 │   │   └── ＊＊＊.md
 │   └── tutorial          ・・・tutorialカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
 │       ├── _index.md           必須タグ：Author
@@ -236,8 +240,10 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 │
 ├── hugo.toml             ・・・公開Webページの設定ファイル。原則編集しない。
 │
-├── archetypes
-│   └── default.md        ・・・記事ファイルのテンプレートファイル。原則編集しない。
+├── archetypes            ・・・記事ファイルのテンプレートファイル。原則編集しない。
+│   ├── know.md
+│   ├── handson.md
+│   └── default.md
 │
 └── themes                ・・・テーマが入っているフォルダ。原則編集しない。
     └── ＊＊＊

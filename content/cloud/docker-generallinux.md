@@ -4,7 +4,7 @@ date = 2024-05-03T02:56:41+09:00
 weight = 3
 draft = false
 categories = ["Server", "Cloud"]
-tags = ["Author:あゆむ", "Level:中級", "Docker"]
+tags = ["Author:あゆむ", "Level:中級", "Type:Knowledge", "Docker"]
 +++
 
 ## 使い方
