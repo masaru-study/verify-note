@@ -3,6 +3,21 @@
 > [!IMPORTANT]
 > ここはステージング環境です。
 
+- [ここはなに？](#ここはなに)
+- [つかいかた](#つかいかた)
+- [付録:ページ作成ルール](#付録ページ作成ルール)
+  - [ディレクトリ](#ディレクトリ)
+  - [カテゴリ](#カテゴリ)
+  - [タグ](#タグ)
+- [付録:Discord 通知](#付録discord-通知)
+  - [通知の著者名](#通知の著者名)
+  - [通知の投稿内容文](#通知の投稿内容文)
+  - [通知の無効化](#通知の無効化)
+- [付録:hugo ディレクトリ構造](#付録hugo-ディレクトリ構造)
+- [付録：ステージング環境について](#付録ステージング環境について)
+  - [Discord 通知のテスト](#discord-通知のテスト)
+  - [本番環境からの同期](#本番環境からの同期)
+
 ## ここはなに？
 
 まさるの勉強部屋参加者のハンズオンチームの検証結果置き場です。
@@ -236,18 +251,6 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 - プロジェクトのルートディレクトリに no_discord.txt を配置する
 - Merge Message の本文に「no_discord」という文字列を含む(上記手順の 7-vi ～ 7-vii)
 
-### 通知のテスト
-
-> [!WARNING]
-> ステージング環境ではテストする際に Github の設定から secrets の書き換えが必要になります。
-> 書き換えると他の人がテストできないので注意してください。書き換え後に復元はできません。
-
-1. Settings
-2. Secrets and variables
-3. Actions
-4. Repository secrets → DISCORD_WEBHOOK_STAGING → 鉛筆マーク
-5. Discord から発行してきた URL を貼り付ける
-
 ## 付録:hugo ディレクトリ構造
 
 ```
@@ -297,3 +300,37 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 └── themes                ・・・テーマが入っているディレクトリ。原則編集しない。
     └── ＊＊＊
 ```
+
+## 付録：ステージング環境について
+
+### Discord 通知のテスト
+
+Github の Web ページ上から設定を変更することで、自分の好きな環境で Discord 通知のテストができます。
+
+> [!WARNING]
+> ステージング環境ではテストする際に Github の設定から secrets の書き換えが必要になります。
+> 書き換えると他の人がテストできないので注意してください。書き換え後に復元はできません。
+
+1. Settings
+2. Secrets and variables
+3. Actions
+4. Repository secrets → DISCORD_WEBHOOK_STAGING → 鉛筆マーク
+5. Discord から発行してきた URL を貼り付ける
+
+### 本番環境からの同期
+
+Github の Web ページ上から Github Actions を手動で動かすことで、本番環境の内容を取り込みます。
+
+> [!WARNING]
+> ステージング環境の内容が上書きされるので注意してください。
+
+> [!TIP]
+> .github/workflow 内のファイルは.github/prod-workflow にコピーされます。
+> 反映する場合は手動でコピーなどしてください。
+
+1.  Actions
+2.  SYNC-FROM-PROD
+3.  Run workflow
+4.  Run workflow
+5.  Pull Request
+6.  Changes by create-pull-request action を承認、マージ
