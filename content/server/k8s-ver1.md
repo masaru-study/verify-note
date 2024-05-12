@@ -60,6 +60,6 @@ Podを各ワーカーノードに割り当てを行います。
 * kube-proxy
 ネットワークの通信をルーティングする仕組みです。
 
-![k8s全体図](/img/k8s/k8sgeneralview.drawio.svg)
+![k8s全体図](/img/k8s/k8sgeneralview.png)
 
 今回はここまで。次回はk8sオブジェクトについて紹介いたします。
