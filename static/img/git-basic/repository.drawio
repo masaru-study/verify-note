@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="CbItgiZTvxdSQLB2g2ZH" name="ページ1">
-        <mxGraphModel dx="1042" dy="591" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+        <mxGraphModel dx="868" dy="493" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -154,8 +154,8 @@
                 <mxCell id="94" value="fetch" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;" parent="1" vertex="1">
                     <mxGeometry x="640" y="190" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="95" value="merge&lt;br&gt;(pull request)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;" parent="1" vertex="1">
-                    <mxGeometry x="880" y="345" width="80" height="30" as="geometry"/>
+                <mxCell id="95" value="pull request&lt;br&gt;&amp;amp;&lt;br&gt;merge" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="345" width="80" height="55" as="geometry"/>
                 </mxCell>
                 <mxCell id="96" value="main" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;labelBorderColor=default;" parent="1" vertex="1">
                     <mxGeometry x="800" y="170" width="80" height="30" as="geometry"/>
@@ -193,19 +193,19 @@
                 <mxCell id="107" value="pull" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#FF0000;" parent="1" vertex="1">
                     <mxGeometry x="640" y="240" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="108" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF0000;" parent="1" source="89" target="76" edge="1">
+                <mxCell id="108" value="" style="endArrow=classic;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF0000;" parent="1" source="90" target="65" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="829.9999999999998" y="250" as="sourcePoint"/>
                         <mxPoint x="270" y="250" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="109" value="push" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#FF0000;" parent="1" vertex="1">
-                    <mxGeometry x="640" y="500" width="80" height="30" as="geometry"/>
+                <mxCell id="109" value="(pushすると同期)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#FF0000;" parent="1" vertex="1">
+                    <mxGeometry x="625" y="490" width="110" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="110" value="post/onamae" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;labelBorderColor=default;" parent="1" vertex="1">
                     <mxGeometry x="260" y="430" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="111" value="main" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;labelBorderColor=default;" parent="1" vertex="1">
+                <mxCell id="111" value="default" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;labelBorderColor=default;" parent="1" vertex="1">
                     <mxGeometry x="260" y="260" width="80" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="113" value="" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=#006EAF;fillColor=#1ba1e2;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;rounded=0;glass=1;labelBorderColor=default;fillStyle=solid;opacity=50;fontColor=#ffffff;" parent="1" vertex="1">
@@ -259,8 +259,20 @@
                 <mxCell id="134" value="index" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#000000;labelBorderColor=default;" parent="1" vertex="1">
                     <mxGeometry x="200" y="690" width="80" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="135" value="凡例" style="text;html=1;strokeColor=default;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#000000;" vertex="1" parent="1">
+                <mxCell id="135" value="凡例" style="text;html=1;strokeColor=default;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#000000;" parent="1" vertex="1">
                     <mxGeometry x="720" y="570" width="210" height="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="" style="endArrow=classic;html=1;strokeColor=#FF0000;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" target="77">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="540" y="490" as="sourcePoint"/>
+                        <mxPoint x="750" y="500" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="137" value="push" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;fontColor=#FF0000;" vertex="1" parent="1">
+                    <mxGeometry x="324" y="490" width="110" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="138" value="mergeがトリガー" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fillStyle=solid;opacity=50;" vertex="1" parent="1">
+                    <mxGeometry x="940" y="290" width="100" height="30" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
