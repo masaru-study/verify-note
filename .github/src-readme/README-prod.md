@@ -121,7 +121,7 @@
    2. リモートリポジトリ内の main ブランチの内容を取得してローカルリポジトリ内の default ブランチに適用します。
 
    ```bash
-   git pull origin
+   git pull origin main
    ```
 
    3. 使うブランチを post/onamae ブランチに変更します。
@@ -133,7 +133,7 @@
    4. ローカルリポジトリ内の default ブランチの内容を post/onamae ブランチに適用します。
 
    ```bash
-   git merge default
+   git merge default post/onamae
    ```
 
    5. hugo でコンテンツを作成します。
@@ -173,7 +173,7 @@
        初回適用時はリモートリポジトリ内の post/onamae ブランチの新規作成になります。
 
    ```bash
-   git push origin
+   git push origin post/onamae
    ```
 
 7. [Github リポジトリ](https://github.com/masaru-study/verify-note/)に Web アクセスして結合する。
