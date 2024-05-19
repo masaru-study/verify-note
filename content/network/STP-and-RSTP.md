@@ -5,6 +5,7 @@ weight = 2000
 draft = false
 categories = ["Network"]
 tags = ["Author:DD Erikson", "Type:Knowledge", "Level:中級", "CCNA", "Spanning Tree Protocol"]
+
 +++
 
 # STP と RSTP

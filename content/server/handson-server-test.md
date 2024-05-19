@@ -4,7 +4,7 @@ date = 2024-05-03T01:15:32+09:00
 weight = 10
 draft = false
 categories = ["Server"]
-tags = ["Author:nakata", "Level:上級", "FreeIPA", "LPIC300"]
+tags = ["Author:nakata", "Level:上級", "Type:Handson", "FreeIPA", "LPIC300"]
 +++
 
 ## 参考サイト

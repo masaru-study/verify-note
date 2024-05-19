@@ -48,7 +48,8 @@ jobs:
       - name: Front Matter check
         run: |
           er_cnt=0
-          # _index.md以外の記事には、Authorタグが含まれている。
+          # Authorタグのチェック
+          # 対象は、_index.md以外
           for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d"); do
             tag_author=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Author:/p")
             if [ -z "$tag_author" ]; then
@@ -56,9 +57,19 @@ jobs:
               er_cnt=$(expr $er_cnt + 1)
             fi
           done
-          # _index.md以外またはGeneral、Other、tutorialカテゴリ以外の記事には、Levelタグが含まれている。
+          # Levelタグのチェック
+          # 対象は、_index.md以外、Generalフォルダ以外、Otherフォルダ以外、tutorialフォルダ以外
           for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d" | sed -e "/content\/tutorial/d"); do
             tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
+            if [ -z "$tag_level" ]; then
+              echo "::error:: No Tag \"Level\": $file"
+              er_cnt=$(expr $er_cnt + 1)
+            fi
+          done
+          # Typeタグのチェック
+          # 対象は、_index.md以外、Generalフォルダ以外、tutorialフォルダ以外
+          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/tutorial/d"); do
+            tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Type:/p")
             if [ -z "$tag_level" ]; then
               echo "::error:: No Tag \"Level\": $file"
               er_cnt=$(expr $er_cnt + 1)

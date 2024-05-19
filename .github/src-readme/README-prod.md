@@ -1,5 +1,17 @@
 # ハンズオンチームの秘密基地
 
+- [ここはなに？](#ここはなに)
+- [つかいかた](#つかいかた)
+- [付録:ページ作成ルール](#付録ページ作成ルール)
+  - [ディレクトリ](#ディレクトリ)
+  - [カテゴリ](#カテゴリ)
+  - [タグ](#タグ)
+- [付録:Discord 通知](#付録discord-通知)
+  - [通知の著者名](#通知の著者名)
+  - [通知の投稿内容文](#通知の投稿内容文)
+  - [通知の無効化](#通知の無効化)
+- [付録:hugo ディレクトリ構造](#付録hugo-ディレクトリ構造)
+
 ## ここはなに？
 
 まさるの勉強部屋参加者のハンズオンチームの検証結果置き場です。
@@ -52,7 +64,6 @@
    1. 任意のディレクトリに移動して、ローカルリポジトリの作成を行います。
 
    ```bash
-   cd ~/hugo
    git init
    ```
 
@@ -110,7 +121,7 @@
    2. リモートリポジトリ内の main ブランチの内容を取得してローカルリポジトリ内の default ブランチに適用します。
 
    ```bash
-   git pull
+   git pull origin main
    ```
 
    3. 使うブランチを post/onamae ブランチに変更します。
@@ -122,17 +133,19 @@
    4. ローカルリポジトリ内の default ブランチの内容を post/onamae ブランチに適用します。
 
    ```bash
-   git merge default
+   git merge default post/onamae
    ```
 
    5. hugo でコンテンツを作成します。
+      - 任意ですが以下のようにするとテンプレートが読み込まれます。  
+        `hugo new --kind=●●● #カテゴリ名#/#ページ名#.md`  
+        対応テンプレートは handson と know です。
 
    ```bash
-   hugo new content #カテゴリ名#/#ページ名#.md
+   hugo new #カテゴリ名#/#ページ名#.md
    ```
 
-   6. 記事の Front Matter を編集します。
-      投稿フォルダによって必須タグ要件が異なりますので付録を参照してください。
+   6. 記事の Front Matter を編集します。ルールは付録を参照してください。
 
    ```bash
    vim content/#カテゴリ名#/#ページ名#.md
@@ -156,11 +169,11 @@
    git commit -m "#コミットコメントを入れる#"
    ```
 
-   10. リモートリポジトリ内の post/onamae ブランチに適用します。
+   10. リモートリポジトリ内の post/onamae ブランチに適用します。  
        初回適用時はリモートリポジトリ内の post/onamae ブランチの新規作成になります。
 
    ```bash
-   git push origin
+   git push origin post/onamae
    ```
 
 7. [Github リポジトリ](https://github.com/masaru-study/verify-note/)に Web アクセスして結合する。
@@ -174,6 +187,43 @@
    7. Confirm Merge
 
 8. [公開 Web ページ](https://masaru-study.github.io/verify-note/)を確認して更新されていれば完了
+
+## 付録:ページ作成ルール
+
+### ディレクトリ
+
+投稿する記事のジャンルによって、格納するディレクトリを分けています。
+
+- General
+  - 技術文書以外の記事
+- Tutorial
+  - 初学者向けの記事
+- Server / Network / Cloud
+  - それぞれの技術文書
+- Other
+  - どれにも属さない技術文書
+
+### カテゴリ
+
+投稿する記事のジャンルによって、Front Matter の categories 属性を設定しています。  
+原則はディレクトリと同じになりますが、こちらは複数設定可能です。
+
+### タグ
+
+投稿する記事に関連するワードによって、Front Matter の tags 属性を設定しています。  
+設定する値は著者の判断にお任せしますが、以下の３点はディレクトリによっては必須です。  
+どのディレクトリにどの必須タグなのかは後述のディレクトリ構造を参照してください。
+
+- Author
+  - 著者名
+- Level
+  - 難易度。目安は以下としてください。
+    - 初級は、LPIC100 ／ CCENT ／ AWS CLF
+    - 中級は、LPIC200 ／ CCNA ／ AWS SAA
+    - 上級は、LPIC300 ／ CCNP ／ AWS SAP
+    - 超上級は、それぞれのご判断にお任せします。
+- Type
+  - Handson もしくは Knowledge
 
 ## 付録:Discord 通知
 
@@ -202,33 +252,33 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 ├── content
 │   ├── _index.md         ・・・トップページの記事ファイル。
 │   │
-│   ├── cloud             ・・・Cloudカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author、Level
+│   ├── cloud             ・・・Cloudカテゴリの記事を入れるディレクトリ。_index.mdはカテゴリトップページ。
+│   │   ├── _index.md           必須タグ：Author、Level、Type
 │   │   └── ＊＊＊.md
-│   ├── general           ・・・Generalカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
+│   ├── general           ・・・Generalカテゴリの記事を入れるディレクトリ。_index.mdはカテゴリトップページ。
 │   │   ├── _index.md           必須タグ：Author
 │   │   └── ＊＊＊.md
-│   ├── network           ・・・Networkカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author、Level
+│   ├── network           ・・・Networkカテゴリの記事を入れるディレクトリ。_index.mdはカテゴリトップページ。
+│   │   ├── _index.md           必須タグ：Author、Level、Type
 │   │   └── ＊＊＊.md
-│   ├── other             ・・・Otherカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author
+│   ├── other             ・・・Otherカテゴリの記事を入れるディレクトリ。_index.mdはカテゴリトップページ。
+│   │   ├── _index.md           必須タグ：Author、Type
 │   │   └── ＊＊＊.md
-│   ├── server            ・・・Serverカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
-│   │   ├── _index.md           必須タグ：Author、Level
+│   ├── server            ・・・Serverカテゴリの記事を入れるディレクトリ。_index.mdはカテゴリトップページ。
+│   │   ├── _index.md           必須タグ：Author、Level、Type
 │   │   └── ＊＊＊.md
-│   └── tutorial          ・・・tutorialカテゴリの記事を入れるフォルダ。_index.mdはカテゴリトップページ。
+│   └── tutorial          ・・・Tutorialカテゴリの記事を入れるディレクトリ。_index.mdはカテゴリトップページ。
 │       ├── _index.md           必須タグ：Author
 │       └── ＊＊＊.md
 │
 ├── static
-│   ├── file              ・・・画像以外の添付ファイルを入れるフォルダ。記事内で/file/＝記事名＝/＊＊＊とすると参照する。
+│   ├── file              ・・・画像以外の添付ファイルを入れるディレクトリ。記事内で/file/＝記事名＝/＊＊＊とすると参照する。
 │   │   ├── ＝記事名＝
 │   │   │    └＊＊＊.py
 │   │   └── ＝記事名＝
 │   │        └＊＊＊.zip
 │   │
-│   └── img               ・・・画像を入れるフォルダ。記事内で/img/＝記事名＝/＊＊＊とすると参照する。
+│   └── img               ・・・画像を入れるディレクトリ。記事内で/img/＝記事名＝/＊＊＊とすると参照する。
 │       ├── ＝記事名＝
 │       │    └＊＊＊.svg
 │       └── ＝記事名＝
@@ -236,9 +286,11 @@ Merge Message の本文が表示されます。複数行も表示可能です。
 │
 ├── hugo.toml             ・・・公開Webページの設定ファイル。原則編集しない。
 │
-├── archetypes
-│   └── default.md        ・・・記事ファイルのテンプレートファイル。原則編集しない。
+├── archetypes            ・・・記事ファイルのテンプレートファイル。原則編集しない。
+│   ├── know.md
+│   ├── handson.md
+│   └── default.md
 │
-└── themes                ・・・テーマが入っているフォルダ。原則編集しない。
+└── themes                ・・・テーマが入っているディレクトリ。原則編集しない。
     └── ＊＊＊
 ```
