@@ -1,7 +1,7 @@
 +++
 title = 'VPN'
 date = 2024-05-19T18:26:51+09:00
-draft = true
+draft = True
 weight = 3000
 categories = ["Network"]
 tags = ["Author:DD Erikson", "Type:Handson", "Level:中級", "VPN", "YAMAHA", "Cisco"]
