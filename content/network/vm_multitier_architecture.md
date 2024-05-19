@@ -2,9 +2,9 @@
 title = 'Vm_multitier_architecture'
 date = 2024-05-10T00:45:25+09:00
 draft = false
-weight = 1
+weight = 5000
 categories = ["Network"]
-tags = ["Author:DD Erikson", "Level:???", "Type:Knowledge", "Network Architecture"]
+tags = ["Author:DD Erikson", "Type:Knowledge", "Level:???", "Network Architecture"]
 +++
 
 # 三層アーキテクチャメモ
