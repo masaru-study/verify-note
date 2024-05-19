@@ -91,5 +91,5 @@ $sudo usermod -aG docker [個人ユーザー]
 $sudo systemctl start docker
 $sudo systemctl enable docker
 ```
-
+- 【おまけ】Docer（Docker compose）を使う時の概念図(DD Erikson作)
 ![Docker compose概念図](/img/docker-build/Docker_compose.drawio.png)
