@@ -91,3 +91,5 @@ $sudo usermod -aG docker [個人ユーザー]
 $sudo systemctl start docker
 $sudo systemctl enable docker
 ```
+
+![Docker compose概念図](/img/docker-build/Docker_compose.drawio.png)
