@@ -1,0 +1,154 @@
+<mxfile host="app.diagrams.net" modified="2024-05-20T15:09:55.376Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="rWTheqaFjDZNQZ46PLmM" version="24.4.4" type="device">
+  <diagram name="ページ1" id="XxduKeznBRmABVPqLTs7">
+    <mxGraphModel dx="1366" dy="735" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Z2OXVvzadx--9llVJ-92-2" value="IPv4&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="29.909999999999997" width="79.26" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-3" value="Data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="319.26" y="29.909999999999997" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-4" value="TCP/UDP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="239.26" y="29.909999999999997" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-5" value="Data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="109.91" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-6" value="Data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="240.53" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-7" value="ESP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="109.91" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-8" value="TCP/UDP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="109.91" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-9" value="IPv4&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="109.91" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-10" value="TCP/UDP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="240.53" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-11" value="ESP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="240.53" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-12" value="IPv4&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="240.53" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-13" value="&lt;div&gt;新しい&lt;/div&gt;IPv4ヘッダ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="240.53" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-14" value="ESP&lt;div&gt;トレーラ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="240.53" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-15" value="ESP&lt;div&gt;認証データ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="240.53" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-16" value="ESP&lt;div&gt;トレーラ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="109.91" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-17" value="ESP&lt;div&gt;認証データ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="109.91" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-18" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="390" y="-0.09000000000000341" width="20" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-19" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=90;size=0.11195568152537928;" vertex="1" parent="1">
+          <mxGeometry x="330.42" y="-20.000000000000004" width="58.93" height="398.75" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-22" value="認証範囲" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="324.88" y="209.91" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-23" value="暗号化範囲" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="169.91" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-24" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="390" y="130.44" width="20" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-25" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=90;size=0.11195568152537928;" vertex="1" parent="1">
+          <mxGeometry x="289.8" y="69.91" width="58.93" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-26" value="認証範囲" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="284.26" y="340.43999999999994" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-27" value="暗号化範囲" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="360" y="300.43999999999994" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-28" value="IPv4パケット" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="110" y="-0.09000000000000341" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-29" value="ESPトランスポートモード" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="80" y="79.91" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-30" value="ESPトンネルモード" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry y="210.53" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-31" value="IPv4&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="29.90999999999991" width="79.26" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-32" value="Data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="999.26" y="29.90999999999991" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-33" value="TCP/UDP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="919.26" y="29.90999999999991" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-34" value="Data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="109.90999999999991" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-35" value="Data" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="240.52999999999992" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-36" value="&lt;div&gt;AH&lt;/div&gt;&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="109.90999999999991" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-37" value="TCP/UDP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="109.90999999999991" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-38" value="IPv4&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="109.90999999999991" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-39" value="TCP/UDP&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="240.52999999999992" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-40" value="&lt;div&gt;AH&lt;/div&gt;&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="760" y="240.52999999999992" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-41" value="IPv4&lt;div&gt;ヘッダ&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="840" y="240.52999999999992" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-42" value="&lt;div&gt;新しい&lt;/div&gt;IPv4ヘッダ" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="240.52999999999992" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-47" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="950" y="-40" width="20" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-49" value="認証範囲" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="925.0000000000001" y="169.9099999999999" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-51" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="910.22" y="50.22" width="20" height="480.44" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-53" value="認証範囲" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="880" y="300.4399999999999" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-55" value="IPv4パケット" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="790" y="-0.09000000000003183" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-56" value="ESPトランスポートモード" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="760" y="79.90999999999991" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-57" value="ESPトンネルモード" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="680" y="210.52999999999992" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-58" value="ESP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="Z2OXVvzadx--9llVJ-92-59" value="AH" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" width="80" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
