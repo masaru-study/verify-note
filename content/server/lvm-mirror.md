@@ -18,6 +18,8 @@ tags = ["Author:DD Erikson", "Level:中級", "Type:Handson", "Storage", "Linux",
   - [ミラー構成](#ミラー構成)
   - [障害検証](#障害検証)
   - [おまけ](#おまけ)
+    - [GPTテーブルのエラーについて](#gptテーブルのエラーについて)
+    - [Proxmoxでディレクトリとして追加する場合の設定について](#proxmoxでディレクトリとして追加する場合の設定について)
 
 ## 概要
 
@@ -205,6 +207,8 @@ TX100 S3 の MegaRAID で 1TBHDD を 2 台つかって RAID1 しようとした�
 
 ### おまけ
 
+#### GPTテーブルのエラーについて
+
 fdisk した時に「<font color="red">The backup GPT table is corrupt, but the primary appears OK, so that will be used.</font>」というのが出ることがある。これはパーティションテーブルが読み取れない時に出るらしい。GPT はパーティションテーブルをプライマリ・バックアップと持っているが、今回はバックアップが壊れている状態。
 
     ```
@@ -284,3 +288,34 @@ Disk identifier: F5A57025-3A16-4AC0-AFA5-48EC657D7B09
     /dev/sda2     2048   2099199   2097152     1G EFI System
     /dev/sda3  2099200 250069646 247970447 118.2G Linux LVM
     ```
+
+#### Proxmoxでディレクトリとして追加する場合の設定について
+
+Proxmoxの他のマウントと同様にサービスでマウントするようにする  
+vim /etc/systemd/system/mnt-pve-storage1.mount
+
+```
+[Install]
+WantedBy=multi-user.target
+
+[Mount]
+Options=defaults
+Type=ext4
+What=/dev/disk/by-uuid/ba016986-1d3c-43e0-bb1d-2d3d176c440d
+Where=/mnt/pve/storage1
+
+[Unit]
+Description=Mount storage 'storage1' under /mnt/pve
+```
+
+実際に利用するストレージとして登録する  
+vim /etc/pve/storage.cfg
+
+```
+# 追記
+dir: storage1
+        path /mnt/pve/storage1
+        content images,iso,rootdir,snippets,backup,vztmpl
+        is_mountpoint 1
+        nodes pve
+```
