@@ -30,6 +30,8 @@ nakata です。\
 
 工事中
 
+{{% button href="https://x.com/AKYM21" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
+
 ## Author: あゆむ
 
 あゆむです！  
@@ -42,11 +44,13 @@ IT 系以外の趣味は以下です。たまには息抜きで趣味のお話�
 - オンラインゲーム
   - FF14、遊戯王 MD
 
+{{% button href="https://x.com/drxsl" style="blue" icon="fa-brands fa-twitter" %}}**Twitter(X)**{{% /button %}}
+
 ## Author: yoshihiro
 
-yoshihiroです！
+yoshihiro です！
 インフラ全般とセキュリティと語学(英語)に興味があります。
-最近、英語関連のVCルームで話しています。定期的に英語チャンネルでコメントするので、
+最近、英語関連の VC ルームで話しています。定期的に英語チャンネルでコメントするので、
 ぜひ見に来てください！
 
 - オンラインゲーム
