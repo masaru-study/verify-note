@@ -28,9 +28,11 @@ nakata です。\
 
 ## Author: DD Erikson
 
-工事中
+まんじゅうのような姿のアイコンをさせていただいております。  
+インフラといってもLANを中心に触っていたのでかなり浅いと思っています。  
+IT以外だとYoutube中心にVtuberを見ていたり、Minecraftをやってたり、なんかいろいろしています。  
 
-{{% button href="https://x.com/AKYM21" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
+{{% button href="https://x.com/AKYM21" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}  
 
 ## Author: あゆむ
 
