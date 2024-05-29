@@ -57,3 +57,5 @@ yoshihiro です！
 
 - オンラインゲーム
   Rust, Hell Let Loose, War Thunder
+
+{{% button href="https://x.com/geek_187" style="blue" icon="fa-brands fa-twitter" %}}**Twitter(X)**{{% /button %}}
