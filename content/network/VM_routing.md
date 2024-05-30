@@ -22,12 +22,12 @@ ESXi、物理スイッチ、物理ルーター間でのルーティング
 ESXi、物理ルーター、物理スイッチ間でのvlan間ルーティングに挑戦します。
 
 ### Switchのvlan設定
-![TP-Link(Switch)](../../static/img/VM_routing/Switch_config.png)
+![TP-Link(Switch)](/img/VM_routing/Switch_config.png)
 
 
 ### 物理構成図
-![物理構成図](../../static/img/VM_routing/物理構成図.png)
+![物理構成図](/img/VM_routing/物理構成図.png)
 
 
 ### 論理構成図
-![論理構成図](../../static/img/VM_routing/論理構成図.png)
+![論理構成図](/img/VM_routing/論理構成図.png)
