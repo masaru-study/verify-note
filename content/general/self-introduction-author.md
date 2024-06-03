@@ -59,3 +59,9 @@ yoshihiro です！
   Rust, Hell Let Loose, War Thunder
 
 {{% button href="https://x.com/geek_187" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
+
+## Author: がぶ
+
+工事中
+
+{{% button href="https://x.com/paradzanov0207" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
