@@ -29,10 +29,10 @@ nakata です。\
 ## Author: DD Erikson
 
 まんじゅうのような姿のアイコンをさせていただいております。  
-インフラといってもLANを中心に触っていたのでかなり浅いと思っています。  
-IT以外だとYoutube中心にVtuberを見ていたり、Minecraftをやってたり、なんかいろいろしています。  
+インフラといっても LAN を中心に触っていたのでかなり浅いと思っています。  
+IT 以外だと Youtube 中心に Vtuber を見ていたり、Minecraft をやってたり、なんかいろいろしています。
 
-{{% button href="https://x.com/AKYM21" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}  
+{{% button href="https://x.com/AKYM21" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
 
 ## Author: あゆむ
 
@@ -46,7 +46,7 @@ IT 系以外の趣味は以下です。たまには息抜きで趣味のお話�
 - オンラインゲーム
   - FF14、遊戯王 MD
 
-{{% button href="https://x.com/drxsl" style="blue" icon="fa-brands fa-twitter" %}}**Twitter(X)**{{% /button %}}
+{{% button href="https://x.com/drxsl" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
 
 ## Author: yoshihiro
 
@@ -57,3 +57,11 @@ yoshihiro です！
 
 - オンラインゲーム
   Rust, Hell Let Loose, War Thunder
+
+{{% button href="https://x.com/geek_187" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
+
+## Author: がぶ
+
+工事中
+
+{{% button href="https://x.com/paradzanov0207" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
