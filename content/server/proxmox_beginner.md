@@ -10,7 +10,7 @@ tags = ["Author:DD_Erikson", "Level:？？？", "Type:Handson", "任意文字列
 
 # Proxmox備忘録
 
-![proxmox](/img/proxmox-full-lockup-inverted.png)
+![proxmox](/img/proxmox_beginne/proxmox-full-lockup-inverted.png)
 
 ## Proxmox Virtual Environmentとは
 
