@@ -4,7 +4,7 @@ date = 2024-05-03T01:15:32+09:00
 weight = 1
 draft = false
 categories = ["Tutorial"]
-tags = ["Author:あゆむ", "LPIC1"]
+tags = ["Author:あゆむ", "LPIC1", "LinuC1"]
 +++
 
 ## 目次
@@ -13,6 +13,7 @@ tags = ["Author:あゆむ", "LPIC1"]
 - [概要](#概要)
   - [本ハンズオンで身につくこと](#本ハンズオンで身につくこと)
   - [事前準備](#事前準備)
+  - [構成図](#構成図)
 - [ハンズオン](#ハンズオン)
   - [Oracle VM VirtualBox のダウンロード](#oracle-vm-virtualbox-のダウンロード)
   - [仮想マシンイメージのダウンロード](#仮想マシンイメージのダウンロード)
@@ -43,6 +44,10 @@ Linux の操作する環境をパソコン上に用意しましょう。
   - メモリ：8GB 以上
   - ストレージ：30GB 以上の空き
   - OS：Windows10 もしくは 11
+
+### 構成図
+
+{{< figure src="/img/tutorial-linux-no1/fig-diagram.drawio.svg" title="fig-diagram" class="center" width="50%" height="50%" >}}
 
 ## ハンズオン
 

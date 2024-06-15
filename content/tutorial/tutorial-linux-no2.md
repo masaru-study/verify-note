@@ -1,10 +1,10 @@
 +++
 title = '【Linux】No.2 基本操作編'
 date = 2024-05-03T01:15:32+09:00
-weight = 1
+weight = 2
 draft = false
 categories = ["Tutorial"]
-tags = ["Author:nakata", "LPIC1"]
+tags = ["Author:nakata", "LPIC1", "LinuC1"]
 +++
 
 ## 目次
@@ -13,6 +13,7 @@ tags = ["Author:nakata", "LPIC1"]
 - [概要](#概要)
   - [本ハンズオンで身につくこと](#本ハンズオンで身につくこと)
   - [出てくるコマンド](#出てくるコマンド)
+  - [構成図](#構成図)
 - [ハンズオン](#ハンズオン)
   - [コンソール画面の表示](#コンソール画面の表示)
   - [操作の記録](#操作の記録)
@@ -48,6 +49,10 @@ Linux の基本操作を WEB サーバを構築しながら触れていきまし
 - ls・・・ディレクトリおよびファイルの表示
 - cat・・・ファイルの内容を表示
 - cd・・・ディレクトリの移動
+
+### 構成図
+
+{{< figure src="/img/tutorial-linux-no2/fig-diagram.drawio.svg" title="fig-diagram" class="center" width="50%" height="50%" >}}
 
 ## ハンズオン
 
