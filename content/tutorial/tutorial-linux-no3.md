@@ -146,13 +146,13 @@ Virtualbox マネージャーの仮想マシン欄をクリックして「設定
     inet6 ::1/128 scope host
        valid_lft forever preferred_lft forever
 2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
-    link/ether 08:00:27:62:b9:75 brd ff:ff:ff:ff:ff:ff
+    link/ether XX:XX:XX:XX:XX:XX brd ff:ff:ff:ff:ff:ff
     inet 172.24.0.101/24 brd 172.24.0.255 scope global noprefixroute enp0s3
        valid_lft forever preferred_lft forever
-    inet6 fe80::a00:27ff:fe62:b975/64 scope link noprefixroute
+    inet6 fe80::XXXX:XXXX:XXXX:XXXX/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 3: virbr0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default qlen 1000
-    link/ether 52:54:00:d7:bb:b5 brd ff:ff:ff:ff:ff:ff
+    link/ether XX:XX:XX:XX:XX:XX brd ff:ff:ff:ff:ff:ff
     inet 192.168.122.1/24 brd 192.168.122.255 scope global virbr0
        valid_lft forever preferred_lft forever
 ```
