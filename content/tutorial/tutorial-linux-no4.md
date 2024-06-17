@@ -168,7 +168,7 @@ The key's randomart image is:
 
 ### 生成した公開鍵を Linux へ転送
 
-Windows の PowerShell で以下のコマンドを入力します。コメント欄は好きな文字を入力してください。
+Windows の PowerShell で以下のコマンドを入力します。
 
 ```pwsh
 PS C:\Users\*****> cat ~/Desktop/id_ed25519.pub | ssh -p 10022 study@localhost `
