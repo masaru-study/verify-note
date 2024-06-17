@@ -28,22 +28,22 @@
 ## github の Personal access token 発行
 
 1. github のメニューから「Settings」を開きます。
-   ![gh-pat1](./img/gh-pat1.png)
+   <img alt="gh-pat1" src="./img/gh-pat1.png" width="50％">
 
 2. 「Developer settings」を開きます。
-   ![gh-pat2](./img/gh-pat2.png)
+   <img alt="gh-pat2" src="./img/gh-pat2.png" width="50％">
 
 3. 「Personal access tokens」を展開して画像の通りに開きます。
-   ![gh-pat3](./img/gh-pat3.png)
+   <img alt="gh-pat3" src="./img/gh-pat3.png" width="100％">
 
 4. 「Note」は任意文字列、「Expiration」は任意の有効期限を選択します。（No expiration がおすすめ）
-   ![gh-pat4](./img/gh-pat4.png)
+   <img alt="gh-pat4" src="./img/gh-pat4.png" width="100％">
 
 5. 画像の通りに権限を付与して「Update token」を押します。
-   ![gh-pat5](./img/gh-pat5.png)
+   <img alt="gh-pat5" src="./img/gh-pat5.png" width="100％">
 
 6. Personal access token が表示されます。
-   ![gh-pat6](./img/gh-pat6.png)
+   <img alt="gh-pat6" src="./img/gh-pat6.png" width="100％">
 
 > [!CAUTION]
 > 一度閉じたら二度と表示できません。
