@@ -26,7 +26,8 @@
 権限のあるメンバーは hugo を使用して記事を投稿できます。
 
 > [!TIP]
-> ２回目以降の記事投稿は[03-記事作成](./src-readme/03-createreport.md)を行ってください。
+> ２回目以降の記事投稿は[03-記事作成](./src-readme/03-createreport.md)／[04-公開](./src-readme/04-release-prod.md)
+> を行ってください。
 
 > [!IMPORTANT]
 > 手順内の"お名前"や"onamae"と言った文字列は任意の文字列に書き換えてください。
@@ -39,7 +40,7 @@
 
 ### [04-公開](./src-readme/04-release-prod.md)
 
-### 05-[公開 Web ページ](https://masaru-study.github.io/verify-note/)を確認して更新されていれば完了
+### [05-公開 Web ページ](https://masaru-study.github.io/verify-note/)を確認して更新されていれば完了
 
 ## 付録:ページ作成ルール
 
