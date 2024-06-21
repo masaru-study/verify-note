@@ -67,5 +67,5 @@ yoshihiro です！
 {{% button href="https://x.com/paradzanov0207" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
 
 ## Author: だるま
-
+だるま です！
 工事中
