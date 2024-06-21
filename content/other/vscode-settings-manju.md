@@ -10,7 +10,7 @@ tags = ["Author:DD Erikson", "Level:中級", "Type:Knowledge", "VSCODE"]
 
 ## 概要
 
-真似をして記載しました。今後追記します…。
+真似をして記載しました。今後追記します。
 
 ## 拡張機能
 
