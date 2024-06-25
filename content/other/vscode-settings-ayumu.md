@@ -58,6 +58,7 @@ hediet.vscode-drawio
 github.vscode-github-actions
 github.vscode-pull-request-github
 mhutchie.git-graph
+tyriar.luna-paint
 
 # bash
 foxundermoon.shell-format
@@ -163,6 +164,14 @@ ms-vscode.remote-explorer
   "remote.SSH.remotePlatform": {
     // SSHリモートデバッグのOS
     "VSCODE-SSH": "linux"
+  },
+  "workbench.editorAssociations": {
+    // エディタの選択
+    "*.png": "luna.editor",
+    "*.bmp": "luna.editor",
+    "*.jpg": "luna.editor",
+    "*.jpeg": "luna.editor",
+    "*.ico": "luna.editor"
   },
   "code-runner.executorMap": {
     // Code Runnerのインタープリタ
