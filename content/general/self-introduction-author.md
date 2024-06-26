@@ -67,5 +67,20 @@ yoshihiro です！
 {{% button href="https://x.com/paradzanov0207" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
 
 ## Author: だるま
+
 だるま です！
-工事中
+ヘッドフォンだるまのアイコンをさせていただいております。  
+インフラからサーバ やプログラムを中心に触っていたのですが。深堀りできておりません  
+IT 以外だと YoutubeやSpoonを中心に Vtuberや配信者の影響を受けまくり、なんかいろいろしています。
+- 好きなモノ/こと
+  - 経営者及び配信者
+  - 若者研究
+  - 飲み会
+- 趣味
+  - 大人のお遊び　（麻雀。ポーカー,イヤフォンからヘッドフォンや機材）　 
+  - 健康（サウナ　ダイエット）
+  - 旅行（なんちゃってアジアンイングリッシュ及びタイ語など）
+
+- 近況　ダイナミックマイクを購入して設定のチューニングに手こずる W
+
+{{% button href="https://x.com/tsukapon_t" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
