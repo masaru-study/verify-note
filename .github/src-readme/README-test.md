@@ -1,7 +1,7 @@
 # ハンズオンチームの秘密基地
 
 > [!IMPORTANT]
-> ここはステージング環境です。
+> ここは検証環境です。
 
 - [ここはなに？](#ここはなに)
 - [つかいかた](#つかいかた)
@@ -19,7 +19,7 @@
   - [通知の投稿内容文](#通知の投稿内容文)
   - [通知の無効化](#通知の無効化)
 - [付録:hugo ディレクトリ構造](#付録hugo-ディレクトリ構造)
-- [付録：ステージング環境について](#付録ステージング環境について)
+- [付録：検証環境について](#付録検証環境について)
   - [Discord 通知のテスト](#discord-通知のテスト)
   - [本番環境からの同期](#本番環境からの同期)
 
@@ -40,11 +40,11 @@
 
 ### [01-インフラ初期設定](./src-readme/01-firstsetup.md)
 
-### [02-ローカルリポジトリ初期設定](./src-readme/02-localsetup-staging.md)
+### [02-ローカルリポジトリ初期設定](./src-readme/02-localsetup-test.md)
 
 ### [03-記事作成](./src-readme/03-createreport.md)
 
-### [04-公開](./src-readme/04-release-staging.md)
+### [04-公開](./src-readme/04-release-test.md)
 
 ### [05-公開 Web ページ](https://masaru-study.github.io/-----test-----verify-note/)を確認して更新されていれば完了
 
@@ -155,20 +155,20 @@ Merge Message の本文が表示されます。複数行も表示可能です。
     └── ＊＊＊
 ```
 
-## 付録：ステージング環境について
+## 付録：検証環境について
 
 ### Discord 通知のテスト
 
 Github の Web ページ上から設定を変更することで、自分の好きな環境で Discord 通知のテストができます。
 
 > [!WARNING]
-> ステージング環境ではテストする際に Github の設定から secrets の書き換えが必要になります。
+> 検証環境ではテストする際に Github の設定から secrets の書き換えが必要になります。
 > 書き換えると他の人がテストできないので注意してください。書き換え後に復元はできません。
 
 1. Settings
 2. Secrets and variables
 3. Actions
-4. Repository secrets → DISCORD_WEBHOOK_STAGING → 鉛筆マーク
+4. Repository secrets → DISCORD_WEBHOOK_TEST → 鉛筆マーク
 5. Discord から発行してきた URL を貼り付ける
 
 ### 本番環境からの同期
@@ -176,7 +176,7 @@ Github の Web ページ上から設定を変更することで、自分の好�
 Github の Web ページ上から Github Actions を手動で動かすことで、本番環境の内容を取り込みます。
 
 > [!WARNING]
-> ステージング環境の内容が上書きされるので注意してください。
+> 検証環境の内容が上書きされるので注意してください。
 
 > [!TIP]
 > .github/workflow 内のファイルは.github/prod-workflow にコピーされます。

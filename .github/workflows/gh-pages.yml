@@ -156,8 +156,8 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-  # Discord通知ジョブ-ステージング環境用
-  Notification-Staging:
+  # Discord通知ジョブ-検証環境用
+  Notification-test:
     # ジョブに必要な定義
     runs-on: ubuntu-latest
     needs: deploy
@@ -181,7 +181,7 @@ jobs:
       # Discord通知を実施。
       - name: Send Discord
         env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_STAGING }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_TEST }}
           DISCORD_USERNAME: "ハンズオンチーム"
         uses: Ilshidur/action-discord@0.3.2
         with:
