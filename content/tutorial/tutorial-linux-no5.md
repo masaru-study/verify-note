@@ -1,4 +1,5 @@
-+++ #テンプレート：ハンズオン title = '【Linux】No.5 ネットワーク'
++++
+title = '【Linux】No.5 ネットワーク'
 date = 2024-07-02T22:00:51+09:00
 draft = false
 weight = 3
