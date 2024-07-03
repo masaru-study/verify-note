@@ -1,6 +1,6 @@
 +++ title = 'NW環境の作り方' 
 date = 2024-07-03T22:00:51+09:00 
-weight = 6000
+weight = 1000
 draft = false
 categories = ["Network"]
 tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
@@ -8,7 +8,6 @@ tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
 
 - [概要](#概要)
 - [ハンズオン](#ハンズオン)
-  - [環境整備](#環境整備)
   - [環境整備](#環境整備)
   - [環境構成図](#環境構成図)
   - [論理構成図](#論理構成図)
