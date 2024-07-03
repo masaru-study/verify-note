@@ -28,8 +28,8 @@ tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
 
 ・物理ネットワーク構成図を作る
 
-4　#　論理構成図
-　　
+４　#　論理構成図
+
 ・論理構成図を作る
 
 5　
