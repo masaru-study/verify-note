@@ -3,7 +3,7 @@ date = 2024-07-03T22:00:51+09:00
 weight = 1000
 draft = false
 categories = ["Network"]
-tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
+tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "Network Environment"]
 +++
 
 - [概要](#概要)
@@ -46,6 +46,6 @@ tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
 
 　etc
 
-※テンプレートなどを使用する見栄えを気にしなくてもいいかもしれないです 
+※テンプレートなどを使用すると見栄えを気にしなくてもいいかもしれないです 
 
 【工事中】
