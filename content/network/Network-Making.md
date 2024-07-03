@@ -1,14 +1,14 @@
 +++ title = 'NW環境の作り方' date = 2024-07-03T22:00:51+09:00 weight = 6000 draft = false categories = ["Network"] tags = ["Author:だるま", "Type:Knowledge", "Level:???", "Network Architecture"] +++
 
-#１　要件定義
+１　要件定義
 
 ・目的を決める
 
-#２　環境整備
+２　環境整備
 
 ・機材を揃える
 
-#３　環境構成図
+３　環境構成図
 
 ・物理ネットワーク構成図を作る
 
