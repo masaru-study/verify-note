@@ -32,7 +32,8 @@ tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
 　　
 ・論理構成図を作る
 
-５　
+5　
+
 ・ラック構成図を作る
 
 ・その他　IPアドレス管理票などもあるとわかりやすい
