@@ -85,7 +85,7 @@ IT 以外だと YoutubeやSpoonを中心に Vtuberや配信者の影響を受け
   - 旅行（なんちゃってアジアンイングリッシュ,タイ語など）
 - 近況　ダイナミックマイクを購入して設定のチューニングに手こずる W
 
-- その他
+- その他　
 [My_Link](https://lit.link/tsukadarumabot)
 
 
