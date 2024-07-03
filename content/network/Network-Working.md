@@ -1,4 +1,10 @@
-+++ title = 'NW環境の作り方' date = 2024-07-03T22:00:51+09:00 weight = 6000 draft = false categories = ["Network"] tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"] +++
++++ title = 'NW環境の作り方' 
+date = 2024-07-03T22:00:51+09:00 
+weight = 6000
+draft = false
+categories = ["Network"]
+tags = ["Author:だるま", "Level:???", "Type:Knowledge", "Network Arch"]
++++
 
 - [概要](#概要)
 - [ハンズオン](#ハンズオン)
