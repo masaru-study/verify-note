@@ -80,10 +80,13 @@ IT 以外だと YoutubeやSpoonを中心に Vtuberや配信者の影響を受け
   - 若者研究
   - 飲み会
 - 趣味
-  - 大人のお遊び　（麻雀。ポーカー,イヤフォンからヘッドフォンや機材）　 
-  - 健康（サウナ　ダイエット）
-  - 旅行（なんちゃってアジアンイングリッシュ及びタイ語など）
-
+  - 大人のお遊び　（麻雀,ポーカー,イヤフォンからヘッドフォンや機材）　 
+  - 健康（サウナ,ダイエット）
+  - 旅行（なんちゃってアジアンイングリッシュ,タイ語など）
 - 近況　ダイナミックマイクを購入して設定のチューニングに手こずる W
+
+- その他
+[My_Link](https://lit.link/tsukadarumabot)
+
 
 {{% button href="https://x.com/tsukapon_t" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
