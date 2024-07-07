@@ -1,4 +1,12 @@
-+++ #テンプレート：ハンズオン title = '【Linux】No.5 ネットワーク' date = 2024-07-01T01:00:51+09:00 draft = false weight = 3 categories = ["Tutorial"] tags = ["Author:だるま", "LPIC1", "LinuC1"] +++
++++
+#テンプレート：ハンズオン
+title = '【Linux】No.5 ネットワーク'
+date = 2024-07-01T01:00:51+09:00
+draft = false
+weight = 4
+categories = ["Tutorial"]
+tags = ["Author:だるま", "LPIC1", "LinuC1"]
++++
 
 \目次
 
