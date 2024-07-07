@@ -1,5 +1,5 @@
 +++
-title = 'VPN'
+title = 'IPSec/VPN'
 date = 2024-05-19T18:26:51+09:00
 draft = false
 weight = 3000

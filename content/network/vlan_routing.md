@@ -1,11 +1,12 @@
 +++
-title = 'Vlan_routing'
+title = 'VLAN間ルーティングについて'
 date = 2024-05-11T21:23:09+09:00
 draft = false
 weight = 2000
 categories = ["Network"]
 tags = ["Author:DD Erikson", "Type:Handson", "Level:中級", "Routing", "VLAN", "CCNA"]
 +++
+
 # VLAN間ルーティングについて
 
 ## 概要
