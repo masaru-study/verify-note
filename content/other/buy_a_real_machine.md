@@ -1,0 +1,167 @@
++++
+title = "実機を買おう！"
+date = 2024-05-13T22:19:17+09:00
+draft = false
+#weight = 99 # 順番を意図的に変更したい場合は変更する
+categories = ["Other"]
+tags = ["Author:DD Erikson", "Level:初級", "Type:Knowledge", "network", "server"]
++++
+
+## 概要
+
+ネットワークやサーバーを触るにあたって、実機を触りたいときがあると思います。  
+実機を購入する際の買い方や、主に気をつけていることをつらつらと記載します。  
+
+{{% notice style="note" %}}
+今回は学習用途で考えます。
+{{% /notice %}}
+
+## 購入前に考えること
+
+### 何をする為にどんな実機が必要かを考える（要件の洗い出し）
+
+* どういう学習をしたいか、シナリオを考える
+{{% notice style="blue" title="example" %}}
+* マルチベンダーでのVPN検証をしたい
+* UTMのHA構成やゲートウェイ冗長化を検証したい
+* LAGやSTP、VTPなどのL2機能を検証したい  
+* ルーティングを検証したい（Static、OSPF、RIP、EIGRP、BGPなど）
+* サーバーやネットワーク機器を含めた構築の練習をしたい
+* ラッキング訓練をしたい
+* 機器の種類（スイッチ・ルーター・AP・サーバー・その他）
+* ベンダーを問わず様々触ってみたい
+* メーカー（Cisco・YAMAHA・Juniper・NEC・富士通・その他）  
+など、簡単でも良いので実現したいシナリオや要件を考える
+{{% /notice %}}
+
+{{% notice style="warning" %}}
+ここをおろそかにすると無限に機器が増えたりして収拾がつかなくなります。  
+また、予算を決めておくと良いでしょう。
+{{% /notice %}}
+
+### 仕様を確認する
+
+* 自分の行いたいことが決まったら、実現できる機器を探します。
+
+{{% notice style="blue" title="NW機器" icon="fa-solid fa-ethernet" %}}
+* インタフェース仕様（メディアの種類、転送レートなど）
+* インタフェースの個数
+* メディア種類
+* 使用できるプロトコルの種類
+
+など
+{{% /notice %}}
+
+{{% notice style="orange" title="サーバー" icon="fa-solid fa-server" %}}
+* スペック
+  * CPU
+  * メモリ容量・種類
+  * ストレージ
+* インタフェース仕様
+* 拡張性（ストレージやメモリ、拡張カードが増やせるかどうか）
+* 大きさ
+
+など
+{{% /notice %}}
+
+* このあたりの仕様は、メーカーページを見るとデータシートがあります。古い機種はとても探しづらいですが、めげないでください。
+
+{{% notice style="blue" title="example" %}}
+* 学習用途の人気が高い（と思っている）ルーター[Cisco 1812Jのデータシート](https://www.cisco.com/c/ja_jp/products/collateral/routers/1801-integrated-services-router-isr/product_data_sheet0900aecd8028a95f.html)
+* こちらも人気が高いルーター[Cisco 890シリーズデータシート](https://www.cisco.com/c/ja_jp/products/collateral/routers/800-series-routers/data_sheet_c78-519930.html)
+* こちらも学習用途での人気が高い（と思っている）L2スイッチ[Cisco Catalyst 2960シリーズスイッチのデータシート](https://www.cisco.com/c/ja_jp/products/collateral/switches/catalyst-2960-series-switches/product_data_sheet0900aecd806b0bd8.html)
+* こちらはL3スイッチでは世界で一番売れたと言われている（らしい）[Cisco Catalyst 3750シリーズデータシート](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3750-series-switches/product_data_sheet0900aecd80371991.html)
+* 数が出回っているNECのルーター、[IX2105](https://jpn.nec.com/univerge/ix/Info/ix2105.html)
+* 中小企業導入数No.1のヤマハルーター、[RTX830の仕様一覧](https://network.yamaha.com/products/routers/rtx830/spec#tab)
+* 一時期噂になったL2スイッチ[Allied telesis x510シリーズデータシート](https://www.allied-telesis.co.jp/p-material/datasheet/x510-d.pdf)
+* 根強い人気の[Juniper SRX300](https://www.juniper.net/jp/ja/products/security/srx-series/srx300-line-firewalls-branch-datasheet.html)
+* 最近良く出回っているUTM、[Fortigate 50E](https://www.fortinet.com/content/dam/fortinet/assets/data-sheets/ja_jp/FGT50ESeriesDS.pdf)
+* 中古市場でよく出回っているサーバー、富士通[PRIMERGY TX1310 M3](https://jp.fujitsu.com/platform/server/primergy/product-navi/html/tx1310m3-201706-pyt1313t3s.html)
+{{% /notice %}}
+
+* データシートの見方としては、各社書き方が異なるのですが、自分が買おうと思った機種の型番をみつけて、どのような仕様なのか、対応プロトコル・機能はどのようなものがあるのかなど見ていきます。PoEの場合は最大給電容量なんかも書いてあるはずなので、よく見てください。
+* サーバーの場合はメーカー品を買う場合は仕様書は参考として受け取っておいてください。個体差が激しいので、販売されている商品の説明書きをよく読んでください。
+
+### 実際に販売されているものを見る
+
+* 購入しようと思ったとき、オークションやフリマサイト、実店舗での購入を考えると思います。その際のポイントになる部分を書いていきます。
+
+{{% notice style="tip" %}}
+現行機種の新品購入は色んな意味でハードルが高いので、基本は中古・ジャンクを購入することになるかと思います。
+  * 中古・・・動作確認されており、多くは初期化されているもの。販売店によって製品として動くことが最低限確認されていることが多く、保証があったりなかったりする。
+  * ジャンク・・・動作確認されておらず（良くて通電確認程度）、状態もあまり良くない。壊れている場合もあり、基本的に部品取り用途として扱われている。基本的に保証はない。
+
+という具合に思ってもらえるとよいかと思います。
+{{% /notice %}}
+
+* 中古の実店舗は東京の秋葉原・名古屋の大須・大阪の日本橋にありますが、かなり限られるのでヤフオクでの購入をおすすめします。また、近所のハードオフなどでも稀に出回ることがあります。
+
+{{% notice style="tip" %}}
+* 秋葉原（気軽？に行けるところを主に）
+  * 【ジャンク・中古】[じゃんぱら](https://www.janpara.co.jp/shopinfo/shop/?shopcd=60)（秋葉原に何店舗かあります）
+  * 【各種ジャンク】[ハードオフ秋葉原1号店](https://www.hardoff.co.jp/shop/detail/?p=101062)
+  * 【各種ジャンク】[ハードオフ秋葉原2号店](https://www.hardoff.co.jp/shop/detail/?p=101104)
+  * 【NW中古】[ヴィゴネットラボ](https://vigonetlabs.net/)
+  * 【NW中古】[NW工房](https://nwkoubou.jp/)
+  * 【サーバー・NWジャンク】[パレットタウン](https://akiba-palette.ocnk.net/)
+  * 【サーバージャンク・中古】[アールガーデン](https://www.r-cube.co.jp/realshop.html)
+  * 【各種ジャンク】[秋葉原最終処分場](https://junk.co.jp/)
+* 大須
+* 日本橋
+
+後日追記します…
+{{% /notice %}}
+
+{{% notice style="warning" %}}
+* メルカリに関しては玉石混交具合が半端ないので、あまりおすすめはしません。たまに掘り出し物がありますが、平気で詐欺出品もある修羅の国だと思っています。
+* 個人間での取引もあります。本当に信頼できる人や、安心して取引できる方からのみ購入するようにしましょう。
+{{% /notice %}}
+
+### 購入を検討する際の見どころ
+
+* 実際にヤフオクでIX2105を見たときの解説をします。
+
+![IX2105](/img/buy_a_real_machine/yahuokuIX2105_1.png)
+
+{{% notice style="default" %}}
+タイトル：そもそも探しているものかどうか確認します。また、ここにファームウェアのバージョンが書かれている場合や、ライセンスの有無などが書かれている場合もあります。が、たまに説明と異なる場合があります。  
+画像：商品の状態が確認できるので、よく見ます。たまに使いまわしの場合もあります。
+価格：即決の場合と現在価格の場合の2パターンがあります。送料も確認しましょう。  
+商品の状態：参考程度に受け取っておきましょう。  
+出品者：今回は見切れていますが、落札・入札ボタンの下に出品者情報があります。ストア出品なのか、個人出品なのか、評価の数、所在地を確認します。
+{{% /notice %}}
+
+![IX2105](/img/buy_a_real_machine/yahuokuIX2105_2.png)
+
+{{% notice style="default" %}}
+商品説明は良く読みましょう。状態に関わる詳細や、付属品について記載されていることがあります。  
+酷いときは何も有りませんが、今回はきちっと書いてくださっているので良い出品者かもしれません。  
+今回は付属品がないとの記載なので、電源ケーブルを別途用意する必要があります。どのような電源ケーブルなのかは仕様を確認します。今回は一般的な電源ケーブルなようなので、家電量販店とかでも手に入ります。  
+また、今回はコンソールケーブルが必要です。事前に準備しましょう。
+{{% /notice %}}
+
+{{% notice style="tip" %}}
+* サーバーの場合は見るところが変わります。
+  * 主に、まずはCPUやメモリ、ストレージの有無を確認します。
+  * ストレージのマウンタがない場合や、ネジ欠品、フロントパネルの鍵が無い、フロントパネルが無いなど、見どころはいろいろあります。
+{{% /notice %}}
+
+* あとは支払い方法や送料を考えます。ヤフオクの場合、あちらから提示される場合と、既に設定されている場合があります。
+
+{{% notice style="note" %}}
+* なにか気になる点があれば出品者に質問しましょう。
+* 落札後は基本的にキャンセルが出来ないので、総合的に考えて入札・購入を検討してください。
+{{% /notice %}}
+
+* 落札後はストアの場合は住所を入れて入金して終わりです。
+* 配送のお願いがある場合（土日に届けて欲しいなど）は落札後の取引連絡でその旨を伝えるとそのようにしてくれる場合があります。ここは対話をしましょう。
+
+### 届いたら…
+
+{{% notice style="note" %}}
+* 届いたら到着連絡か評価をしましょう。
+* なるべく早めに動作の確認をしましょう。
+* 動かなくても泣かない。販売者には罪はありません。
+{{% /notice %}}
+
+その他あれば追記します。

@@ -8,6 +8,8 @@ categories = ["Server", "Network"]
 tags = ["Author:yoshihiro", "Level:中級", "Type:Handson", "ESXi"]
 +++
 
+# VM
+
 - [概要](#概要)
 - [ハンズオン](#ハンズオン)
   - [Switchのvlan設定](#switchのvlan設定)

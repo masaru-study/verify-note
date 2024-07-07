@@ -1,5 +1,5 @@
 +++
-title = 'STP and RSTP'
+title = 'STP と RSTP'
 date = 2024-05-05T05:36:53+09:00
 weight = 2000
 draft = false
