@@ -4,7 +4,7 @@ date = 2024-07-14T14:50:00+09:00
 draft = true
 #weight = 99 # 順番を意図的に変更したい場合は変更する
 categories = ["Cloud"]
-tags = ["Author あゆむ", "Type:Handson", "Level:初級", "AWS", "S3", "Web"]
+tags = ["Author:あゆむ", "Type:Handson", "Level:初級", "AWS", "S3", "Web"]
 +++
 
 - [概要](#概要)
