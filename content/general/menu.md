@@ -1,5 +1,5 @@
 +++
-title = "メニュー"
+title = "ネタ帳"
 date = 2024-05-06T22:37:32+09:00
 weight = 1
 draft = false
@@ -36,6 +36,7 @@ tags = ["Author:ALL Member"]
 - NFS
 - k8s
   - MiniKube
+- Raspberry piことはじめ
 - ~~LAMP 環境構築~~（完了）
 - ~~LVM~~（完了）
 - ~~PODMAN(Docker)~~（完了）
@@ -59,6 +60,7 @@ tags = ["Author:ALL Member"]
 - IEEE802.1X 認証
 - (WireGuard)(SoftEther VPN)
 - スクリプト（EEM など）
+- ケーブル自作について
 - ~~VLAN間ルーティング~~
 - ~~STP~~（完了）
 - ~~RSTP~~（完了）
