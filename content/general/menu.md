@@ -9,14 +9,11 @@ tags = ["Author:ALL Member"]
 
 これらは、これから行う予定のあるハンズオンのいわば"ネタ"です。
 
-## 複合
+## チュートリアル
 
-- Python
-- Ansible
-- Terraform
-- コンテナ
+- (現在予定無し　ネタ募集中！)
 
-### 知識
+## ナレッジ
 
 - SD-WAN（について調べる）
 - SDN（について調べる）
@@ -36,7 +33,10 @@ tags = ["Author:ALL Member"]
 - NFS
 - k8s
   - MiniKube
-- Raspberry piことはじめ
+- Raspberry pi ことはじめ
+- Keycloak
+  - Open ID connect
+  - SAML
 - ~~LAMP 環境構築~~（完了）
 - ~~LVM~~（完了）
 - ~~PODMAN(Docker)~~（完了）
@@ -61,7 +61,7 @@ tags = ["Author:ALL Member"]
 - (WireGuard)(SoftEther VPN)
 - スクリプト（EEM など）
 - ケーブル自作について
-- ~~VLAN間ルーティング~~
+- ~~VLAN 間ルーティング~~
 - ~~STP~~（完了）
 - ~~RSTP~~（完了）
 - ~~VPN(IPSec/VPN)~~（完了）
@@ -71,7 +71,17 @@ tags = ["Author:ALL Member"]
 - Azure Entra ID
 - AWS Cognito
 - AWS Amplify
+- Minio(S3 互換 OSS)
+- Cloudflare CDN
+- Cloudflare Zero Trust
 - 自動車 IoT＆可視化
 - ~~Discord Github 連携~~（完了）
 - ~~Github 基本操作~~（完了）
 - ~~Github Pages~~（完了）
+
+## その他（複合、プログラミング ・・・etc）
+
+- Python
+- Ansible
+- Terraform
+- ~~Visual Studio Code~~（完了）
