@@ -58,8 +58,8 @@ jobs:
             fi
           done
           # Levelタグのチェック
-          # 対象は、_index.md以外、Generalフォルダ以外、Otherフォルダ以外、tutorialフォルダ以外
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d" | sed -e "/content\/tutorial/d"); do
+          # 対象は、_index.md以外、Generalフォルダ以外、Otherフォルダ以外、tutorialフォルダ以外、projectsフォルダ以外
+          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d" | sed -e "/content\/tutorial/d" | sed -e "/content\/projects/d" ); do
             tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
             if [ -z "$tag_level" ]; then
               echo "::error:: No Tag \"Level\": $file"
