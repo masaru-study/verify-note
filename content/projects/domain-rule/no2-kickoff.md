@@ -1,4 +1,4 @@
-+++ title = 'キックオフ議事録' date = 2024-09-01T01:23:32+09:00 draft = false weight = 1 categories = ["Projects"] tags = ["Author:だるま", "Type:Minutes", "DNS"] +++
++++ title = 'キックオフ議事録' date = 2024-09-01T01:23:32+09:00 draft = false weight = 2 categories = ["Projects"] tags = ["Author:だるま", "Type:Minutes", "DNS"] +++
 
 概要
 日時
