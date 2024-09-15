@@ -1,5 +1,5 @@
 +++
 archetype = "chapter"
-title = "(仮)ドメイン利用ルール策定"
+title = "ドメイン作成 PJ"
 weight = 1
 +++
