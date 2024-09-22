@@ -1,6 +1,6 @@
 +++
 title = '第3回定例会議事録'
-date = 2024-09-23T22:30:32+09:00
+date = 2024-05-03T01:15:32+09:00
 draft = false
 weight = 1
 categories = ["Projects"]
@@ -30,7 +30,7 @@ Discord
 
 ### 出席者(敬称略)
 
-(DD) Erikson、(あゆむ)、(がぶ)、yoshihiro、(だるま)、(nakata)
+DD Erikson、あゆむ、がぶ、yoshihiro、だるま、nakata
 
 ### 次回会議
 
