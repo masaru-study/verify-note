@@ -1,5 +1,5 @@
 +++
-title = '第3回定例会議事録'
+title = '第３回定例会議事録'
 date = 2024-05-03T01:15:32+09:00
 draft = false
 weight = 1
