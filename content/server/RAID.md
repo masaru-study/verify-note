@@ -3,7 +3,7 @@ title = "RAIDについて" # ページタイトル
 date = 2025-01-13T00:00:00+09:00
 weight = 3
 draft = false
-categories = ["other"]
+categories = ["Server"]
 tags = ["Author:DD Erikson", "Level:初級", "Type:Knowledge", "Storage", "RAID"]
 +++
 
