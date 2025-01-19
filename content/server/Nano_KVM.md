@@ -26,15 +26,15 @@ tags = ["Author:DD Erikson", "Level:初級", "Type:Handson", "IP KVM", "Server M
 ## 開封
 
 * 到着時パッケージ  
-<img width="50%" src="/img/nano_kvm/IMG_20250112_105653301.jpg"></img>  
-<img width="50%" src="/img/nano_kvm/IMG_20250112_105823128.jpg"></img>  
+![Package1](/img/nano_kvm/IMG_20250112_105653301.jpg") 
+![Package2](/img/nano_kvm/IMG_20250112_105823128.jpg") 
 
 * 中身はこんな感じでした  
-<img width="30%" src="/img/nano_kvm/IMG_20250112_110052347.jpg"></img>  
-<img width="30%" src="/img/nano_kvm/IMG_20250112_110155957.jpg"></img>  
+![全体](/img/nano_kvm/IMG_20250112_110052347.jpg") 
+![KVM-B](/img/nano_kvm/IMG_20250112_110155957.jpg") 
 
 * KVM-B裏面  
-<img width="30%" src="/img/nano_kvm/IMG_20250112_110546826.jpg"></img>  
+![KVM-B裏](/img/nano_kvm/IMG_20250112_110546826.jpg") 
 
 説明書はなかったですが、本体横のカラフルな接続図でだいたい察することができました。  
 また、KVM-Bもちゃんとピンの役割が書いてあったので何をするものか容易に察することができました。
@@ -45,23 +45,23 @@ tags = ["Author:DD Erikson", "Level:初級", "Type:Handson", "IP KVM", "Server M
 
 * KVM-Bにはマザーボードに刺す側とケースからのケーブルを刺すピンがあるので表記のとおりに接続します。
 * うちのサーバー機のASUS製マザーボードはピンの配列がそのままだったので付属のジャンパケーブルは使わずに接続できました。これでケースからのスイッチでの電源オンオフとリセットができ、KVM-AからのPower制御もできるようです。  
-<img width="30%" src="/img/nano_kvm/IMG_20250117_233228731.jpg"></img>  
+![KVM-B接続](/img/nano_kvm/IMG_20250117_233228731.jpg") 
 
 * 付属のType-C USBケーブルで本体に接続し、本体からPCに付属のType-C USBケーブルで接続、PCからのHDMIケーブルを本体に接続します。スイッチからLANケーブルを繋げます。  
 * 電源をいれるとDHCPでIPアドレスを拾ってくれたようで、しばらくするとLCDにIPアドレスが表示されました。  
 * 本体にはPowerボタンとResetボタンがあり、このボタンでKVM-B経由でサーバー機のハードスイッチと同等の動きをします。  
-<img width="30%" src="/img/nano_kvm/IMG_20250117_233338340.jpg"></img>  
+![KVM-A接続](/img/nano_kvm/IMG_20250117_233338340.jpg") 
 
 * でてきたIPアドレスにアクセスするとIDとパスワードを求められたので、適当にadmin/adminと入れたらログインできました。  
-<img width="50%" src="/img/nano_kvm/2025-01-18003653.png"></img>  
+![ログイン](/img/nano_kvm/2025-01-18003653.png") 
 
 * admin/adminだと心配なので歯車マークから変更できそうだったのでパスワードを変更したところ入れなくなりました。  
 * [wiki](https://wiki.sipeed.com/hardware/en/kvm/NanoKVM/introduction.html)曰く、Bootボタンを10秒押せばリセットできる、とのことでしたが、Bootボタンがどこにあるかの表記はなく、分解してみたところボタンがありました。
 * HIDを接続するType-C端子の右側のボタンを押すとLCDがリセットされるようだったので、これだと思ったので10秒間長押しするとリセットされました。  
-<img width="30%" src="/img/nano_kvm/IMG_20250118_000504478.jpg"></img>  
+![ボタン](/img/nano_kvm/IMG_20250118_000504478.jpg") 
 
 * 裏面にはSDカードが刺さっていました。Wiki曰く、イメージファイルの保存などに使われるそうです。KIOXIA製です。  
-<img width="50%" src="/img/nano_kvm/IMG_20250118_000457265.jpg"></img>  
+![SDカード](/img/nano_kvm/IMG_20250118_000457265.jpg") 
 
 ## 使用感
 
@@ -71,7 +71,7 @@ tags = ["Author:DD Erikson", "Level:初級", "Type:Handson", "IP KVM", "Server M
 * ファームウェアのアップデートはこの手の製品にしては自動アップデートに対応しており、アップデートを押すと自動でWEBからダウンロードしてきて適用してくれます。
 * ブラウザで完結させられるのもとても楽です。
 * H264で動画圧縮をしているようで、かなり機敏に動いてくれます。ちゃんとUEFI設定画面も表示されました。  
-<img width="50%" src="/img/nano_kvm/2025-01-18002626.png"></img>  
+![RAID0](/img/nano_kvm/2025-01-18002626.png") 
 
 * この価格でこの機能と使用感なら全然良いと言いますか、むしろ~~殿様商売をしている~~某社のIPKVMとかよりも使い勝手が良いように思います。KVMより、使用感としてはIPMIに近いです。
 * 最大の問題は、中国発の製品であるというところでしょうか…。どうしても拭えないなにかがあります。
