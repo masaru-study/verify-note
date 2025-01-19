@@ -26,15 +26,15 @@ tags = ["Author:DD Erikson", "Level:初級", "Type:Handson", "IP KVM", "Server M
 ## 開封
 
 * 到着時パッケージ  
-![Package1](/img/nano_kvm/IMG_20250112_105653301.jpg") 
-![Package2](/img/nano_kvm/IMG_20250112_105823128.jpg") 
+![Package1](/img/nano_kvm/IMG_20250112_105653301.jpg) 
+![Package2](/img/nano_kvm/IMG_20250112_105823128.jpg) 
 
 * 中身はこんな感じでした  
-![全体](/img/nano_kvm/IMG_20250112_110052347.jpg") 
-![KVM-B](/img/nano_kvm/IMG_20250112_110155957.jpg") 
+![全体](/img/nano_kvm/IMG_20250112_110052347.jpg) 
+![KVM-B](/img/nano_kvm/IMG_20250112_110155957.jpg) 
 
 * KVM-B裏面  
-![KVM-B裏](/img/nano_kvm/IMG_20250112_110546826.jpg") 
+![KVM-B裏](/img/nano_kvm/IMG_20250112_110546826.jpg) 
 
 説明書はなかったですが、本体横のカラフルな接続図でだいたい察することができました。  
 また、KVM-Bもちゃんとピンの役割が書いてあったので何をするものか容易に察することができました。
