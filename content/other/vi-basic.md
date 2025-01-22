@@ -1,9 +1,9 @@
 +++
 #テンプレート：ナレッジ
-title = 'vi基礎知識' 
-date = 2025-01-23T18:19:17+09:00 
+title = "vi基礎知識"
+date = 2025-01-23T18:19:17+09:00
 draft = false
-#weight = 100 # 順番を意図的に変更したい場合は変更する
+#weight = 99 # 順番を意図的に変更したい場合は変更する
 categories = ["Other"]
 tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 +++
