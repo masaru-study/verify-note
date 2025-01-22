@@ -2,6 +2,7 @@
 title = "vi基礎知識"
 date = 2025-01-22T18:19:17+09:00
 draft = false
+weight = 6
 categories = ["Other"]
 tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 +++
