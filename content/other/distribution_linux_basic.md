@@ -7,7 +7,7 @@ categories = ["Other"]
 tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 +++
 
-# LINUXディストリビューションについて
+## LINUXディストリビューションについて
 
 - [01：MiracleLinux](#MiracleLinux)
 - [02：Ubuntu](#Ubuntu)
