@@ -1,6 +1,6 @@
 +++
 title = "LINUXディストリビューションについて"
-date = 2025-02-15T18:19:17+09:00
+date = 2025-02-16T18:19:17+09:00
 weight = 7
 draft = false
 categories = ["Other"]
@@ -13,27 +13,29 @@ tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 
 ※5つのパターンがある認識です。
 
-- [1：RedHat系](RedHat系)
-- [2：Debian系](Debian系)
-- [3：SlackWare系](SlackWare系)
-- [4：UNIX系](UNIX系)
-- [5：その他系](その他系)
+- [1：RedHat系]
+- [2：Debian系]
+- [3：SlackWare系]
+- [4：UNIX系]
+- [5：その他系]
 
 ### 各ディストリビューション
 
-- [01：MiracleLinux](#miraclelinux)
-- [02：Ubuntu](#ubuntu)
-- [03：CentOS](#centos)
-- [04：AlmaLinux](#almalinux)
-- [05：RockeyLinux](#rockeylinux)
-- [06：KaliLinux](#kalilinux)
-- [07：Parrot](Parrot)
-- [08：Raspbian](#raspbian)
-- [09：Zorin](#zorin)
-- [10：MintLinux](#mintlinux)
-- [11：SlackWare](#slackware)
-- [12：FreeBSD](#freebsd)
-- [13：OpenSUSE](#opensuse)
+※随時拡張予定
+
+- [01：MiracleLinux]
+- [02：Ubuntu]
+- [03：CentOS]
+- [04：AlmaLinux]
+- [05：RockyLinux]
+- [06：KaliLinux]
+- [07：Parrot]
+- [08：Raspbian]
+- [09：Zorin]
+- [10：MintLinux]
+- [11：SlackWare]
+- [12：FreeBSD]
+- [13：OpenSUSE]
 
 ## 目的
 
@@ -69,9 +71,10 @@ RedHat系のディストリビューションは、エンタープライズ環�
 - **特徴**: RedHat Enterprise Linux (RHEL)の無償版。安定性が高い。
 - **用途**: サーバー環境、エンタープライズシステム
 - **パッケージ管理**: yum/dnf
-  - **Fedora**:
-    - **特徴**: 最新技術を迅速に取り入れるディストリビューション。
-    - **用途**: デスクトップ、開発環境、テスト環境
+- **Fedora**:
+  - [URL](https://fedoraproject.org/ja/)
+  - **特徴**: 最新技術を迅速に取り入れるディストリビューション。(テストイメージ)
+  - **用途**: デスクトップ、開発環境、テスト環境
 
 ### AlmaLinux
 
@@ -80,7 +83,7 @@ RedHat系のディストリビューションは、エンタープライズ環�
 - **用途**: サーバー環境、エンタープライズシステム
 - **パッケージ管理**: yum/dnf
 
-### RockeyLinux
+### RockyLinux
 
 - [URL](https://rockylinux.org/ja-JP/download/)
 - **特徴**: CentOSの後継として誕生。コミュニティ主導で開発
@@ -116,14 +119,14 @@ Debian系のディストリビューションは、安定性と豊富なパッ�
 
 - [URL](https://zorin.com/os/download/)
 - **特徴**: Windowsからの移行を容易にするデザイン。Pro(有料)/Core/Liteとある。
-- **用途**: デスクトップPC、初心者向け。
+- **用途**: デスクトップPC、初心者向けです。
 - **パッケージ管理**: apt
 
 ### MintLinux
 
 - [URL](https://www.linuxmint.com/download.php)
 - **特徴**: ユーザーフレンドリーでデスクトップ環境に特化。Cinnamon/Xfce/MATEとある。
-- **用途**: デスクトップPC、初心者向け。
+- **用途**: デスクトップPC、初心者向けです。
 - **パッケージ管理**: apt
 
 ## SlackWare系
@@ -158,4 +161,4 @@ SlackWare系のディストリビューションは、シンプルさと安定�
 ### 参考情報
 
 - [Wikipedia - Linuxディストリビューション](https://en.wikipedia.org/wiki/Linux_distribution)
-- [DistroWatch](https://distrowatch.com/)
+- [DistrWatch](https://distrowatch.com/)
