@@ -124,7 +124,7 @@ Debian系のディストリビューションは、安定性と豊富なパッ�
 ### Raspbian
 
 - [URL](https://www.raspberrypi.com/software/)
-- **特徴**: Raspberry Pi専用の最適化されたディストリビューション。※Raspberry Pi Imagerでもインストール可能
+- **特徴**: Raspberry Pi専用の最適化されたディストリビューションです。※Raspberry Pi Imagerでもインストール可能
 - **用途**: 教育、エンターテイメント、プロジェクト開発
 - **パッケージ管理**: apt
 
@@ -160,13 +160,13 @@ SlackWare系のディストリビューションは、シンプルさと安定�
 ### OpenSUSE
 
 - [URL](https://get.opensuse.org/ja/)
-- **特徴**: 安定性と最新技術のバランスが取れたディストリビューション。Tumbleweed/Leap/Leap Micro/Microとある。RHEL系に属する。
+- **特徴**: 安定性と最新技術のバランスが取れたディストリビューションです。Tumbleweed/Leap/Leap Micro/Microとある。RHEL系に属する。
 - **用途**: デスクトップ、サーバー、開発環境
 - **パッケージ管理**: zypper
 
 ## UNIX系（その他）（Linuxみたいなもの）
 
-狭義ではLINUXのディストリリビューションではないですが、現場でつかっていたため、記載してあります
+狭義ではLINUXのディストリビューションではないですが、現場でつかっていたため、記載してあります。
 
 ### FreeBSD
 
