@@ -1,6 +1,6 @@
 +++
 title = "LINUXディストリビューションについて"
-date = 2025-02-16T23:19:17+09:00
+date = 2025-02-20T06:19:17+09:00
 weight = 7
 draft = false
 categories = ["Other"]
@@ -30,14 +30,16 @@ tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 - [05：RockyLinux]
 - [06：Ubuntu]
 - [07：AmazonLinux2]
-- [08：KaliLinux]
-- [09：Parrot]
-- [10：Raspbian]
-- [11：Zorin]
-- [12：LinuxMint]
-- [13：SlackWare]
-- [14：OpenSUSE]
-- [15：FreeBSD]
+- [08：AmazonLinux2023]
+- [09：KaliLinux]
+- [10：Parrot]
+- [11：Raspbian]
+- [12：Zorin]
+- [13：LinuxMint]
+- [14：MXLinux]
+- [15：SlackWare]
+- [16：OpenSUSE]
+- [17：FreeBSD]
 
 ## 目的
 
@@ -92,6 +94,13 @@ RedHat系のディストリビューションは、エンタープライズ環�
 - **用途**: サーバー環境、エンタープライズシステム
 - **パッケージ管理**: yum
 
+### AmazonLinux2023
+
+- [URL](https://cdn.amazonlinux.com/al2023/os-images/2023.6.20250211.0/kvm/)（現時点での最新版）
+- **特徴**: AWSのサービスと容易に統合できる。オンプレミスでの使用も可能です。ISOファイルでのインストールは小細工が必要でした。
+- **用途**: サーバー環境、エンタープライズシステム
+- **パッケージ管理**: dnf
+
 ## Debian系
 
 Debian系のディストリビューションは、安定性と豊富なパッケージが特徴です。幅広い用途に対応しています。
@@ -139,6 +148,13 @@ Debian系のディストリビューションは、安定性と豊富なパッ�
 
 - [URL](https://www.linuxmint.com/download.php)
 - **特徴**: ユーザーフレンドリーでデスクトップ環境に特化。Cinnamon/Xfce/MATEとある。
+- **用途**: デスクトップPC、初心者向けです。
+- **パッケージ管理**: apt
+
+### MXLinux
+
+- [URL](https://mxlinux.org/)
+- **特徴**: ユーザーフレンドリーでデスクトップ環境に特化。Xfceのインターフェース。（Windowsユーザは乗り換えやすい（GUI中心））ファイヤーウォールが初期から外部からのDenyになっているため、セキュアでした。パッケージ管理のソフトも使いやすい（SynapticやMXパッケージ）
 - **用途**: デスクトップPC、初心者向けです。
 - **パッケージ管理**: apt
 
