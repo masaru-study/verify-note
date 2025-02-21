@@ -1,6 +1,6 @@
 +++
 title = "LINUXディストリビューションについて"
-date = 2025-02-20T06:19:17+09:00
+date = 2025-02-21T06:19:17+09:00
 weight = 7
 draft = false
 categories = ["Other"]
@@ -39,7 +39,8 @@ tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 - [14：MXLinux]
 - [15：SlackWare]
 - [16：OpenSUSE]
-- [17：FreeBSD]
+- [17：EndeavourOS]
+- [18：FreeBSD]
 
 ## 目的
 
@@ -179,6 +180,13 @@ SlackWare系のディストリビューションは、シンプルさと安定�
 - **特徴**: 安定性と最新技術のバランスが取れたディストリビューションです。Tumbleweed/Leap/Leap Micro/Microとある。RHEL系に属する。
 - **用途**: デスクトップ、サーバー、開発環境
 - **パッケージ管理**: zypper
+
+### EndeavourOS
+
+- [URL](https://endeavouros.com/)　※Arch系
+- **特徴**: EndeavourOSは、★Arch Linuxベースのディストリビューションで、シンプルさとカスタマイズ性を重視しながらも、ユーザーフレンドリーなインストールと操作性を提供することで人気を集めています。Xfce、KDE Plasma、GNOME、Cinnamon
+- **用途**: デスクトップ、サーバー、開発環境
+- **パッケージ管理**: pacman
 
 ## UNIX系（その他）（Linuxみたいなもの）
 
