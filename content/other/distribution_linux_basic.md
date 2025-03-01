@@ -1,6 +1,6 @@
 +++
 title = "LINUXディストリビューションについて"
-date = 2025-02-21T06:19:17+09:00
+date = 2025-03-01T06:19:17+09:00
 weight = 7
 draft = false
 categories = ["Other"]
@@ -37,10 +37,12 @@ tags = ["Author:だるま", "Level:初級", "Type:Knowledge", "linux"]
 - [12：Zorin]
 - [13：LinuxMint]
 - [14：MXLinux]
-- [15：SlackWare]
-- [16：OpenSUSE]
-- [17：EndeavourOS]
-- [18：FreeBSD]
+- [15：BunsenLabs]
+- [16：elementaryOS]
+- [17：SlackWare]
+- [18：OpenSUSE]
+- [19：EndeavourOS]
+- [20：FreeBSD]
 
 ## 目的
 
@@ -156,6 +158,20 @@ Debian系のディストリビューションは、安定性と豊富なパッ�
 
 - [URL](https://mxlinux.org/)
 - **特徴**: ユーザーフレンドリーでデスクトップ環境に特化。Xfceのインターフェースです。（Windowsユーザは乗り換えやすい（GUI中心））ファイヤーウォールが初期から外部からのDenyになっているため、セキュアでした。パッケージ管理のソフトも使いやすくなってます。（SynapticやMXパッケージ）
+- **用途**: デスクトップPC、初心者向けです。
+- **パッケージ管理**: apt
+
+### BunsenLabs
+
+- [URL](https://www.bunsenlabs.org/installation.html)
+- **特徴**: ユーザーフレンドリーでデスクトップ環境に特化。KDE、GNOME、Xfceのインターフェースです。落ち着いているGUI
+- **用途**: デスクトップPC、初心者向けです。
+- **パッケージ管理**: apt
+
+### elementary OS
+
+- [URL](https://elementary.io/ja/)
+- **特徴**: ユーザーフレンドリーでデスクトップ環境に特化。（MACユーザは乗り換えやすい（GUI中心）寄付（無料でもカスタム0円）で導入できる。
 - **用途**: デスクトップPC、初心者向けです。
 - **パッケージ管理**: apt
 
