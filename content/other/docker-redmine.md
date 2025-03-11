@@ -1,10 +1,10 @@
 +++
-title: "Docker-Redmine"
-date: 2025-03-11T02:56:41+09:00
-weight: 9
-draft: false
-categories: ["Server", "Other"]
-tags: ["Author:だるま", "Level:中級", "Type:Knowledge", "Docker"]
+title = "Docker-Redmine"
+date = 2025-03-11T02:56:41+09:00
+weight = 9
+draft = false
+categories = ["Server", "Other"]
+tags = ["Author:だるま", "Level:中級", "Type:Knowledge", "Docker"]
 +++
 
 ## docker上にRedmineを構築する
