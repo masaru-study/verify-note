@@ -1,11 +1,11 @@
----
++++
 title: "Docker-Redmine"
 date: 2025-03-11T02:56:41+09:00
 weight: 9
 draft: false
 categories: ["Server", "Other"]
 tags: ["Author:だるま", "Level:中級", "Type:Knowledge", "Docker"]
----
++++
 
 ## docker上にRedmineを構築する
 
@@ -13,7 +13,7 @@ tags: ["Author:だるま", "Level:中級", "Type:Knowledge", "Docker"]
 
 ※VM上のUbuntuもしくはDebianを使用する前提で記載しています
 ※これが一番楽でしたｗ
- 
+
 ### dockerインストール公式サイト参照
 https://docs.docker.com/engine/install/
 
@@ -63,8 +63,8 @@ volumes:
   web:
   db:
 ```
-    
-## docker-compose実行
-```cmd
-docker compose up -d
-```
+
+  ## docker-compose実行
+ ```cmd
+ docker compose up -d
+ ```
