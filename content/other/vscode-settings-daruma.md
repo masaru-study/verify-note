@@ -104,7 +104,7 @@ zainchen.json
     "hediet.vscode-drawio.resizeImages": null,
     "markdown-pdf.mermaidServer": "https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js",
     "remote.SSH.remotePlatform": {
-        "10.50.249.95": "linux"
+        "XXX.XXX.XXX.XX": "linux"
     },
     "git.autofetch": true,
     "hediet.vscode-drawio.theme": "dark",
