@@ -1,9 +1,9 @@
 +++
 title = "Docker-Redmine"
-date = 2025-03-11T02:56:41+09:00
-weight = 9
+date = 2025-03-16T02:56:41+09:00
+weight = 5
 draft = false
-categories = ["Server", "Other"]
+categories = ["Server"]
 tags = ["Author:だるま", "Level:中級", "Type:Knowledge", "Docker"]
 +++
 
