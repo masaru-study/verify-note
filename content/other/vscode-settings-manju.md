@@ -1,7 +1,7 @@
 +++
 #テンプレート：ナレッジ
-title = "VSCODEの設定紹介-DD Erikson編-"
-date = 2024-06-22T01:08:05+09:00
+title = "VSCodeの設定紹介-DD Erikson編-"
+date = 2025-03-15T01:08:05+09:00
 draft = false
 #weight = 99 # 順番を意図的に変更したい場合は変更する
 categories = ["Other"]
