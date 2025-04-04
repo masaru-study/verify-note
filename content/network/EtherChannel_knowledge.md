@@ -5,7 +5,7 @@ date = 2025-04-05T00:57:00+09:00
 draft = false
 #weight = 1000
 categories = ["Network"]
-tags = ["Author:nakata216", "Level:初級", "Type:Knowledge", "EtherChannel", "LACP"]
+tags = ["Author:nakata", "Level:初級", "Type:Knowledge", "EtherChannel", "LACP"]
 +++
 
 ## 目次
@@ -37,7 +37,7 @@ EtherChannel（LACP）を構成する上で下記の項目を合わせておく�
    束ねるリンクは速度とDuplexを合わせなければ EtherChannel（LACP）はアップしません。  
    例えばfastetherとGigabitetherやDuplex fullとhalfを束ねることは出来ないです。  
 * スイッチモード  
-   EtherChannel（LACP）をアクセスポートとして扱う場合は物理リンクを事前にアクセスポート、トランスポートとして扱う場合は物理リンクを事前にトランスポートに合わせておく必要があります。
+   EtherChannel（LACP）をアクセスポートとして扱う場合は物理リンクを事前にアクセスポート、トランクポートとして扱う場合は物理リンクを事前にトランクポートに合わせておく必要があります。
 
 ## 実際にやらかした事象
 
@@ -62,7 +62,7 @@ configを見る限りでは確かにアクセスポートですし、speed,Duple
 
 ここでEtherChannel（LACP）の設定が適用されるタイミングを確認すると  
 **EtherChannel（LACP）がアップした段階** で適用される。  
-そのため、VLAN違いによるLINKDOWN状態ではEtherChannel（LACP）はアップしません。  
+そのため、VLAN不一致によりLINKDOWN状態ではEtherChannel（LACP）はアップしません。  
 結果、L3SW側ではVLAN1のままポートが開かれてしまいました。
 
 ## まとめ
