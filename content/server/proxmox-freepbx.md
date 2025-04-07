@@ -43,6 +43,7 @@ SNG7-PBX16-64bit-2302-1をしようしています
 ### 2台の内線環境を設定して、お互いに通信をする
 
 イメージ図
+{{< figure src="/img/proxmox-freepbx/proxmox-freepbx.png" title="proxmox-freepbx" class="center" width="50%" height="50%" >}}
 
 ### ＩＰ電話のアプリ
 
