@@ -10,8 +10,7 @@ draft= false
 
 categories= ["Server", "Other"] 
 
-tags= ["Author:だるま", "Level:中級", "Type:Knowledge", "Server"]
-
+tags = ["Author:だるま", "Level:中級", "Type:Knowledge", "Server"]
 +++
 
 # サーバー選定に関するガイド(だるまのハンズオン)
