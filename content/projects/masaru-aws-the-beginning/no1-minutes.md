@@ -1,17 +1,10 @@
 +++
-
-title="Daruma-AWS-Guide"
-
-date= 2025-05-01T05:56:41+09:00
-
-weight= 6
-
-draft= false
-
-categories= ["Server", "Other"] 
-
-tags = ["Author:だるま", "Level:初級", "Type:Knowledge"]
-
+title = '第1回：イベント内発言'
+date = 2025-05-01T019:45:00+09:00
+draft = false
+weight = 11
+categories = ["Projects"]
+tags = ["Author:だるま", "Type:Minutes", "AWS"]
 +++
 
 ## 主なAWSのガイド
