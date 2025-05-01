@@ -1,6 +1,6 @@
 +++
 title = '第1回：イベント内発言'
-date = 2025-05-01T019:45:00+09:00
+date = 2025-05-01T19:45:00+09:00
 draft = false
 weight = 11
 categories = ["Projects"]
