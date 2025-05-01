@@ -1,6 +1,6 @@
 +++
 title = 'このプロジェクト(イベント)について'
-date = 2025-05-01T019:45:00+09:00
+date = 2025-05-01T19:45:00+09:00
 draft = false
 weight = 1
 categories = ["Projects"]
