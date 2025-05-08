@@ -1,5 +1,5 @@
 +++
-title = 'Proxmox上でのCML2の立ち上げ'
+title = 'CML2を使おう'
 date = 2025-04-05T00:57:00+09:00
 draft = false
 #weight = 1000
@@ -44,9 +44,9 @@ tags = ["Author:DD Erikson", "Level:中級？", "Type:Knowledge", "Cisco Mpdelon
 8. 現れたファイルの中でovfというのがあるのでProxmoxにインポートします。インポートが始まると画像のように進捗が表示され、100%になると完了です。
 
     ```
-        root@pve:/var/lib/vz/upload# qm importrtovf <VMID（他と被らない）> cml2_2.8.1-14_amd64-35_SHA256.ovf <storagename> --format raw
+        root@pve:/var/lib/vz/upload# qm importovf <VMID（他と被らない）> cml2_2.8.1-14_amd64-35_SHA256.ovf <storagename> --format raw
         ## 以下は一例です
-        root@pve:/var/lib/vz/upload# qm importrtovf 301 cml2_2.8.1-14_amd64-35_SHA256.ovf local-lvm --format raw
+        root@pve:/var/lib/vz/upload# qm importovf 301 cml2_2.8.1-14_amd64-35_SHA256.ovf local-lvm --format raw
     ```
 ![progress](/img/CML2_on_Proxmox/image.png)
 
