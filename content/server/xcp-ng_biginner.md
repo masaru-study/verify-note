@@ -5,7 +5,7 @@ date = 2025-05-08T23:03:34+09:00
 draft = false
 #weight = 108 # 順番を意図的に変更したい場合は変更する
 categories = ["Server"]
-tags = ["だるま", "Level:？？？", "Type:Handson", "仮想化"]
+tags = ["Author:だるま", "Level:？？？", "Type:Handson", "仮想化"]
 +++
 
 # Xen備忘録
