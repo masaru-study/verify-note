@@ -51,6 +51,11 @@ Discordイベントルーム
 
 {{< figure src="/img/masaru-aws-the-beginning/service-kind.drawio.png" title="サービスの種類" class="center" width="50%" height="50%" >}}
 
+### クラウドの課金について
+
+- ここの内容に近いことを話した。  
+  https://cloudnavi.nhn-techorus.com/archives/1865
+
 ## 実施内容
 
 ### ルートユーザーでしか出来ない系
