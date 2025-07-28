@@ -7,6 +7,12 @@ on:
       - main
     types: [opened, synchronize, reopened]
 
+# PRの操作やコメントを記述するためのGITHUB_TOKEN権限
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
 # Github Runnerのシェル
 defaults:
   run:
@@ -16,7 +22,7 @@ jobs:
   # FrontMatterチェックジョブ
   frontmatter-check:
     runs-on: ubuntu-latest
-    
+
     steps:
       # PRのブランチの内容をチェックアウト
       - name: Checkout PR branch
@@ -27,11 +33,11 @@ jobs:
       # 記事の必須要件をチェック
       - name: Front Matter check
         id: check
+        continue-on-error: true
         run: |
-          er_cnt=0
           error_files=""
           echo "::notice::FrontMatterチェックを開始します"
-          
+
           # Authorタグのチェック
           # 対象は、_index.md以外
           echo "::group::Authorタグのチェック"
@@ -40,13 +46,12 @@ jobs:
             if [ -z "$tag_author" ]; then
               echo "::error file=$file::Authorタグが見つかりません"
               error_files="$error_files\n- ❌ **$file**: Authorタグが不足"
-              er_cnt=$(expr $er_cnt + 1)
             else
               echo "::notice file=$file::Authorタグ: OK"
             fi
           done
           echo "::endgroup::"
-          
+
           # Levelタグのチェック
           # 対象は、_index.md以外、Generalフォルダ以外、Otherフォルダ以外、tutorialフォルダ以外、projectsフォルダ以外
           echo "::group::Levelタグのチェック"
@@ -55,13 +60,12 @@ jobs:
             if [ -z "$tag_level" ]; then
               echo "::error file=$file::Levelタグが見つかりません"
               error_files="$error_files\n- ❌ **$file**: Levelタグが不足"
-              er_cnt=$(expr $er_cnt + 1)
             else
               echo "::notice file=$file::Levelタグ: OK"
             fi
           done
           echo "::endgroup::"
-          
+
           # Typeタグのチェック
           # 対象は、_index.md以外、Generalフォルダ以外、tutorialフォルダ以外
           echo "::group::Typeタグのチェック"
@@ -70,104 +74,72 @@ jobs:
             if [ -z "$tag_type" ]; then
               echo "::error file=$file::Typeタグが見つかりません"
               error_files="$error_files\n- ❌ **$file**: Typeタグが不足"
-              er_cnt=$(expr $er_cnt + 1)
             else
               echo "::notice file=$file::Typeタグ: OK"
             fi
           done
           echo "::endgroup::"
-          
-          # エラーファイル一覧をGitHub Outputに保存
-          {
-            echo 'error_files<<EOF'
-            echo -e "$error_files"
-            echo 'EOF'
-          } >> "$GITHUB_OUTPUT"
-          
-          # エラー数をGitHub Outputに保存
-          echo "error_count=$er_cnt" >> "$GITHUB_OUTPUT"
-          
+
           # チェック結果の表示
-          if [ $er_cnt -eq 0 ]; then
+          if [ -z ${error_files} ]; then
             echo "::notice::✅ すべてのFrontMatterチェックが成功しました"
             exit 0
           else
-            echo "::error::❌ $er_cnt 個のエラーが見つかりました。このPRはマージできません。"
+            echo "::error::❌ エラーが見つかりました。このPRはマージできません。"
             echo "::error::問題のあるファイル一覧:"
             echo -e "$error_files"
+            {
+              echo 'error_files<<EOF'
+              echo -e "$error_files"
+              echo 'EOF'
+            } >> "$GITHUB_OUTPUT"
             exit 1
           fi
 
-      # チェック結果をPRにコメント
-      - name: Comment PR
-        if: always()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const success = '${{ steps.check.outcome }}' === 'success';
-            const errorCount = '${{ steps.check.outputs.error_count }}';
-            const errorFiles = `${{ steps.check.outputs.error_files }}`;
-            
-            let body;
-            if (success) {
-              body = '✅ **FrontMatterチェック: 成功**\n\nすべての必須タグが正しく設定されています。このPRはマージ可能です。';
-            } else {
-              body = `❌ **FrontMatterチェック: 失敗**\n\n**${errorCount}個のファイル**で必須タグが不足しています。\n\n⚠️ **このPRは現在マージできません。** 以下の問題を修正してください：\n\n### 🔧 修正が必要なファイル\n${errorFiles}\n\n### 📋 必須タグの説明\n- **Author:** すべてのコンテンツファイルに必要\n- **Level:** server, network, cloudカテゴリのファイルに必要\n- **Type:** general, tutorial以外のファイルに必要\n\n### 💡 修正例\n\`\`\`toml\ntags = ["Author:あなたの名前", "Level:初級", "Type:Knowledge"]\n\`\`\`';
-            }
-            
-            // 既存のコメントを検索
-            const { data: comments } = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-            });
-            
-            const botComment = comments.find(comment => 
-              comment.user.type === 'Bot' && 
-              comment.body.includes('FrontMatterチェック')
-            );
-            
-            if (botComment) {
-              // 既存のコメントを更新
-              await github.rest.issues.updateComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                comment_id: botComment.id,
-                body: body
-              });
-            } else {
-              // 新しいコメントを作成
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: context.payload.pull_request.number,
-                body: body
-              });
-            }
+      # FrontMatterチェックが成功した場合、PRにコメント
+      - name: PR Comment on Success
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMENT_BODY=$(cat << "EOF"
+          ✅ **FrontMatterチェック: 成功**
 
-      # FrontMatterチェックが失敗した場合、PRを自動クローズ
-      - name: Close PR on failure
-        if: steps.check.outcome == 'failure'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const errorCount = '${{ steps.check.outputs.error_count }}';
-            const errorFiles = `${{ steps.check.outputs.error_files }}`;
-            
-            // PRをクローズ
-            await github.rest.pulls.update({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_request_number: context.payload.pull_request.number,
-              state: 'closed'
-            });
-            
-            // クローズ理由をコメント
-            const closeMessage = `🚫 **PR自動クローズ**\\n\\nこのPRは、FrontMatterチェックの失敗により自動的にクローズされました。\\n\\n**📊 エラー概要:**\\n- エラー数: ${errorCount}個のファイル\\n- ステータス: マージ要件を満たしていません\\n\\n**🔧 修正後の対応:**\\n1. 上記のエラーをすべて修正してください\\n2. 修正完了後、新しいPRを作成してください\\n3. または、このPRを再オープンして修正をpushしてください\\n\\n**⚠️ 注意:**\\nFrontMatterの必須タグが不足している状態では、サイトの品質管理上マージできません。\\nすべての必須タグを適切に設定してから再度PRを作成してください。`;
+          すべての必須タグが正しく設定されています。このPRはマージ可能です。
+          EOF
+          )
+          echo "$COMMENT_BODY" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
 
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body: closeMessage
-            });
+      # FrontMatterチェックが失敗した場合、PRにコメント
+      - name: PR Comment on Failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          COMMENT_BODY=$(cat << "EOF"
+          ❌ **FrontMatterチェック: 失敗**
+          ⚠️ このPRは現在マージできません。以下の問題を修正してください：
+
+          ### 🔧 修正が必要なファイル
+          ${{ steps.check.outputs.error_files }}
+
+          ### 📋 必須タグの説明
+          - **Author:** すべてのコンテンツファイルに必要
+          - **Level:** server, network, cloudカテゴリのファイルに必要
+          - **Type:** general, tutorial以外のファイルに必要
+
+          ### 💡 修正例
+          ```toml
+          tags = [\"Author:あなたの名前\", \"Level:初級\", \"Type:Knowledge\"]
+          ```
+
+          ### 🔧 修正後の対応
+          1. 上記のエラーをすべて修正してください
+          2. 修正完了後、新しいPRを作成してください
+          3. または、このPRを再オープンして修正をpushしてください
+
+          🚫 **PR自動クローズします。**
+          EOF
+          )
+          echo "$COMMENT_BODY" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
+          gh pr close ${{ github.event.pull_request.number }}
