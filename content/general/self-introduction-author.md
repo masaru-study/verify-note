@@ -73,19 +73,27 @@ yoshihiro です！
 だるま です！
 ヘッドフォンだるまのアイコンをさせていただいております。  
 インフラからサーバ やプログラムを中心に触っていたのですが。深堀りできておりません  
-IT 以外だと YoutubeやSpoonを中心に Vtuberや配信者の影響を受けまくり、なんかいろいろしています。
+IT 以外だと Youtube や Spoon を中心に Vtuber や配信者の影響を受けまくり、なんかいろいろしています。
+
 - 好きなモノ/こと
   - 経営者及び配信者
   - 若者研究
   - 飲み会
 - 趣味
-  - 大人のお遊び　（麻雀,ポーカー,イヤフォンからヘッドフォンや機材）　 
+  - 大人のお遊び　（麻雀,ポーカー,イヤフォンからヘッドフォンや機材）
   - 健康（サウナ,ダイエット）
   - 旅行（なんちゃってアジアンイングリッシュ,タイ語など）
 - 近況　ダイナミックマイクを購入して設定のチューニングに手こずる W
 
 - その他　
-[My_Link](https://lit.link/tsukadarumabot)
-
+  [My_Link](https://lit.link/tsukadarumabot)
 
 {{% button href="https://x.com/tsukapon_t" style="blue" icon="fa-brands fa-twitter" %}}Twitter(X){{% /button %}}
+
+## Author: あさひ
+
+工事中
+
+## Author: からし
+
+工事中
