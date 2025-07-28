@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.125.4
+      THEME_VERSION: 7.6.1
 
     # Discord通知有無を別jobに渡す
     outputs:
@@ -38,11 +39,16 @@ jobs:
 
     steps:
       # ブランチの内容をチェックアウト（ダウンロード）する
-      - name: Checkout
+      - name: Main Submodule
         uses: actions/checkout@v4
         with:
-          submodules: recursive
-          fetch-depth: 0
+          submodules: false
+
+      # Releanをバージョン指定でチェックアウト（ダウンロード）する
+      - name: Submodule Checkout
+        run: |
+          git submodule update --init --recursive --depth 1
+          git submodule foreach "git fetch --depth 1 origin tag ${THEME_VERSION} && git checkout ${THEME_VERSION}"
 
       # 記事の必須要件をチェック。
       - name: Front Matter check
