@@ -2,14 +2,14 @@ baseURL = ''
 languageCode = 'ja'
 title = 'まさるの勉強部屋 ハンズオンチーム'
 theme = 'hugo-theme-relearn'
-canonifyurls = false # GitHub Pagesでは無効化
+canonifyurls = true # 画像パスの正しい解決のため有効化
 relativeURLs = false # GitHub Pagesでは絶対パスを使用
 
 [outputs]
-  home = ['html', 'rss', 'search', 'searchpage'] # 検索機能オプション
+  home = ['html', 'rss']
 
 [params]
-  themeVariant = ['relearn-light', 'relearn-dark', 'auto'] # 背景機能オプション
+  themeVariant = ['relearn-light'] # 背景機能オプション
   disableNextPrev = false # [次へ]と[前へ]のナビゲーションボタンを隠す
   ordersectionsby = "weight" # メニューの表示順をweight値に設定
   disableLandingPageButton = true  # homeエントリを隠す
@@ -32,7 +32,7 @@ relativeURLs = false # GitHub Pagesでは絶対パスを使用
 
   [[menu.shortcuts]]
     name = "<i class='fa-fw fab fa-github'></i> GitHub"
-    url = 'https://github.com/masaru-study/verify-note.git'
+    url = 'https://github.com/masaru-study/verify-note'
     weight = 30
 
   [[menu.shortcuts]]
