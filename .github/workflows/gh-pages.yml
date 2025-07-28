@@ -30,8 +30,9 @@ jobs:
     # ジョブに必要な定義
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.125.4
-      THEME_VERSION: 6.4.1
+      HUGO_VERSION: 0.148.2
+      THEME_VERSION: 8.0.0
+      DART_SASS_VERSION: 1.89.2
 
     # Discord通知有無を別jobに渡す
     outputs:
@@ -118,7 +119,7 @@ jobs:
 
       # Hugo依存関係パッケージのインストール
       - name: Install Dart Sass
-        run: sudo snap install dart-sass
+        run: sudo snap install dart-sass --channel=${DART_SASS_VERSION}/stable
 
       # Github Pagesを設定
       - name: Setup Pages

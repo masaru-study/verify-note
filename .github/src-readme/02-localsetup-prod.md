@@ -41,7 +41,7 @@ git checkout default
 
 ```bash
 git submodule update --init --recursive --depth 1
-git submodule foreach 'git fetch --depth 1 origin tag 7.6.1 && git checkout 7.6.1'
+git submodule foreach 'git fetch --depth 1 origin tag 8.0.0 && git checkout 8.0.0'
 ```
 
 8.  実際に変更を加える、ローカルリポジトリ内の post/onamae ブランチを作ります。
