@@ -2,8 +2,8 @@ baseURL = ''
 languageCode = 'ja'
 title = 'まさるの勉強部屋 ハンズオンチーム'
 theme = 'hugo-theme-relearn'
-canonifyurls = true # 画像パスの正しい解決のため有効化
-relativeURLs = false # GitHub Pagesでは絶対パスを使用
+canonifyurls = true # baseURLベースの絶対パス生成を試行
+relativeURLs = false # ルート相対パス使用
 
 [outputs]
   home = ['html', 'rss']
