@@ -33,7 +33,6 @@ jobs:
       # 記事の必須要件をチェック
       - name: Front Matter check
         id: check
-        continue-on-error: true
         run: |
           error_files=""
           echo "::notice::FrontMatterチェックを開始します"
@@ -98,7 +97,7 @@ jobs:
 
       # FrontMatterチェックが成功した場合、PRにコメント
       - name: PR Comment on Success
-        if: success()
+        if: steps.check.outcome == 'success'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -112,7 +111,7 @@ jobs:
 
       # FrontMatterチェックが失敗した場合、PRにコメント
       - name: PR Comment on Failure
-        if: failure()
+        if: steps.check.outcome == 'failure'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
