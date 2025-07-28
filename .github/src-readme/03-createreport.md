@@ -45,19 +45,29 @@ vim content/#カテゴリ名#/#ページ名#.md
 vim content/#カテゴリ名#/#ページ名#.md
 ```
 
-8.  作成した記事をワークツリーからインデックスへ登録を行います。
+8.  (任意)記事をローカル環境でビルドして Web サーバーを起動して確認します。
+
+```bash
+hugo server -D
+```
+
+もしくは、VSCODE の DevContainer 機能でディレクトリを開きます。  
+[DevContainer の定義](../../.devcontainer/devcontainer.json)はリポジトリ内に用意してあります。  
+DevContainer は Hugo 環境を作成し、自動で`hugo server -D`が実行されます。
+
+9.  作成した記事をワークツリーからインデックスへ登録を行います。
 
 ```bash
 git add -A
 ```
 
-9.  インデックスの情報を post/onamae ブランチに適用します。
+10. インデックスの情報を post/onamae ブランチに適用します。
 
 ```bash
 git commit -m "#コミットコメントを入れる#"
 ```
 
-10. リモートリポジトリ内の post/onamae ブランチに適用します。
+11. リモートリポジトリ内の post/onamae ブランチに適用します。
     初回適用時はリモートリポジトリ内の post/onamae ブランチの新規作成になります。
 
 ```bash
