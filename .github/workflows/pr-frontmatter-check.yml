@@ -65,7 +65,11 @@ jobs:
                 
                 if [ -z "$tag_line" ]; then
                   echo "::error file=$file::${tag_name}タグが見つかりません"
-                  error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
+                  if [ -z "$error_files" ]; then
+                    error_files="- ❌ **$file**: ${tag_name}タグが不足"
+                  else
+                    error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
+                  fi
                 else
                   # 選択肢チェックが必要な場合
                   if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
@@ -75,7 +79,11 @@ jobs:
                     local valid_options="${VALID_OPTIONS[$tag_name]}"
                     if [[ ",$valid_options," != *",$tag_value,"* ]]; then
                       echo "::error file=$file::${tag_name}タグの値が無効です: $tag_value"
-                      error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
+                      if [ -z "$error_files" ]; then
+                        error_files="- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
+                      else
+                        error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
+                      fi
                     else
                       echo "::notice file=$file::${tag_name}タグ: OK ($tag_value)"
                     fi
