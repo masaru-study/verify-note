@@ -66,12 +66,18 @@ jobs:
                     error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
                 else 
                   if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
+                    found_valid=false
                     for opt_name in $(echo "${VALID_OPTIONS[$tag_name]}" | tr ',' ' '); do
                       tag_value=$(echo "$tag_line" | sed -ne "/${opt_name}/p")
-                      if [ -z "$tag_value" ]; then
-                        error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効"
+                      if [ -n "$tag_value" ]; then
+                        found_valid=true
+                        break
                       fi
                     done
+                    
+                    if [ "$found_valid" = false ]; then
+                      error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効"
+                    fi
                   fi
                 fi
               done
