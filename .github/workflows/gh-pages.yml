@@ -51,39 +51,6 @@ jobs:
           git submodule update --init --recursive --depth 1
           git submodule foreach "git fetch --depth 1 origin tag ${THEME_VERSION} && git checkout ${THEME_VERSION}"
 
-      # 記事の必須要件をチェック。
-      - name: Front Matter check
-        run: |
-          er_cnt=0
-          # Authorタグのチェック
-          # 対象は、_index.md以外
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d"); do
-            tag_author=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Author:/p")
-            if [ -z "$tag_author" ]; then
-              echo "::error:: No Tag \"Author\": $file"
-              er_cnt=$(expr $er_cnt + 1)
-            fi
-          done
-          # Levelタグのチェック
-          # 対象は、_index.md以外、Generalフォルダ以外、Otherフォルダ以外、tutorialフォルダ以外、projectsフォルダ以外
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d" | sed -e "/content\/tutorial/d" | sed -e "/content\/projects/d" ); do
-            tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
-            if [ -z "$tag_level" ]; then
-              echo "::error:: No Tag \"Level\": $file"
-              er_cnt=$(expr $er_cnt + 1)
-            fi
-          done
-          # Typeタグのチェック
-          # 対象は、_index.md以外、Generalフォルダ以外、tutorialフォルダ以外
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/tutorial/d"); do
-            tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Type:/p")
-            if [ -z "$tag_level" ]; then
-              echo "::error:: No Tag \"Level\": $file"
-              er_cnt=$(expr $er_cnt + 1)
-            fi
-          done
-          if [ $er_cnt -eq 0 ]; then exit 0; else exit 1; fi
-
       # ルートディレクトリにno_discord.txtがあるか確認。
       - name: Check notification no_file
         id: no_file

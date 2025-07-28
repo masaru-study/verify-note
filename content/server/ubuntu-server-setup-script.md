@@ -1,9 +1,9 @@
 +++
 title = 'Ubuntu Server クラウド/インフラ開発環境セットアップガイド'
 date = 2025-01-27T10:00:00+09:00
-draft = false
+draft = true
 categories = ["Server"]
-tags = ["Author:ayumu", "Level:初級〜中級", "Type:Handson", "Ubuntu", "Linux", "セットアップ", "自動化", "クラウド", "DevOps"]
+tags = ["Author:ayumu", "Level:中級", "Type:Handson", "Ubuntu", "Linux", "セットアップ", "自動化", "クラウド", "DevOps"]
 +++
 
 - [概要](#概要)
@@ -26,35 +26,40 @@ tags = ["Author:ayumu", "Level:初級〜中級", "Type:Handson", "Ubuntu", "Linu
 ### 導入されるツール・環境
 
 **クラウド・DevOps ツール**
+
 - AWS CLI v2（自動更新機能付き）
 - Terraform（HashiCorp 公式リポジトリ）
-- GitHub CLI（bash補完機能付き）
+- GitHub CLI（bash 補完機能付き）
 - PowerShell Core
 
 **コンテナ・Kubernetes エコシステム**
+
 - Docker CE（公式リポジトリ）
-- Podman + Buildah（Docker代替）
-- kubectl（bash補完・エイリアス設定済み）
+- Podman + Buildah（Docker 代替）
+- kubectl（bash 補完・エイリアス設定済み）
 - Helm（パッケージマネージャー）
-- Kustomize（YAML構成管理）
+- Kustomize（YAML 構成管理）
 - ArgoCD CLI（GitOps）
-- yq（YAML処理ツール、自動更新機能付き）
+- yq（YAML 処理ツール、自動更新機能付き）
 
 **開発・運用支援**
+
 - 日本語環境の完全設定
 - 包括的なシステムユーティリティ
 - ネットワーク診断・セキュリティツール
-- Active Directory統合機能
+- Active Directory 統合機能
 
 ## 前提条件と準備
 
 ### システム要件
+
 - **OS**: Ubuntu Server 24.04 LTS（推奨）または 22.04 LTS
-- **権限**: sudo権限を持つユーザーアカウント
+- **権限**: sudo 権限を持つユーザーアカウント
 - **ネットワーク**: インターネット接続環境
 - **ディスク容量**: 最低 10GB の空き容量
 
 ### 事前確認
+
 ```bash
 # Ubuntuバージョン確認
 lsb_release -a
@@ -245,7 +250,7 @@ if [[ $install_ad =~ ^[Yy]$ ]]; then
         realmd sssd sssd-tools libnss-sss libpam-sss \
         adcli samba-common-bin oddjob oddjob-mkhomedir \
         packagekit krb5-user
-    
+
     if [ $? -eq 0 ]; then
         echo "✓ Active Directory統合ツールのインストール完了"
     else
@@ -291,7 +296,7 @@ if wget -q https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip; then
     unzip -oq awscli-exe-linux-x86_64.zip
     if ./aws/install -i /usr/local/aws-cli -b /usr/local/bin; then
         echo "✓ AWS CLI v2 インストール完了"
-        
+
         # 自動更新スクリプトの作成
         cat << "EOF" > /usr/local/aws-cli/update-awscli
 #!/bin/bash

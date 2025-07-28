@@ -76,8 +76,11 @@
     - 中級は、LPIC200 ／ CCNA ／ AWS SAA
     - 上級は、LPIC300 ／ CCNP ／ AWS SAP
     - 超上級は、それぞれのご判断にお任せします。
+    - わからないときは、？？？をつけてください。
 - Type
-  - Handson もしくは Knowledge
+  - Handson もしくは Knowledge もしくは Minutes
+
+上記タグが適切に設定されていないとプルリクエストが出せません。
 
 ## 付録:Discord 通知
 
