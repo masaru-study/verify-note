@@ -107,6 +107,7 @@ jobs:
 
           すべての必須タグが正しく設定されています。このPRはマージ可能です。
           EOF
+          )
           echo "$COMMENT_BODY" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
 
       # FrontMatterチェックが失敗した場合、PRにコメント
@@ -139,5 +140,6 @@ jobs:
 
           🚫 **PR自動クローズします。**
           EOF
+          )
           echo "$COMMENT_BODY" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
           gh pr close ${{ github.event.pull_request.number }}
