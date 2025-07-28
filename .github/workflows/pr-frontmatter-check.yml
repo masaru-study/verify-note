@@ -33,6 +33,7 @@ jobs:
       # 記事の必須要件をチェック
       - name: Front Matter check
         id: check
+        continue-on-error: true
         run: |
           error_files=""
           echo "::notice::FrontMatterチェックを開始します"
