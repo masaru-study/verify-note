@@ -54,42 +54,26 @@ jobs:
           check_folder() {
             local folder="$1"
             local required_tags="$2"
+            local tag_line
             
             echo "::group::${folder}フォルダのチェック"
             
             for file in $(find "./content/$folder" -name '*.md' 2>/dev/null | grep -v '_index.md'); do
               for tag_name in $(echo "$required_tags" | tr ',' ' '); do
-                local tag_pattern="${tag_name}:"
-                local tag_line
-                tag_line=$(grep "tags = " "$file" | grep "${tag_pattern}")
-                echo tag_line is   $tag_line
-
+                tag_pattern="${tag_name}:"
+                tag_line=$(cat "$file" | sed -ne "/tags \= \[/p" | sed -ne "/${tag_pattern}/p")
                 if [ -z "$tag_line" ]; then
-                  echo "::error file=$file::${tag_name}タグが見つかりません"
-                  if [ -z "$error_files" ]; then
-                    error_files="- ❌ **$file**: ${tag_name}タグが不足"
-                  else
                     error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
-                  fi
                 else
-                  # 選択肢チェックが必要な場合
                   if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
-                    local tag_value
-                    tag_value=$(echo "$tag_line" | grep -o "${tag_pattern}[^\"]*" | sed "s/${tag_pattern}//")
-                    
-                    local valid_options="${VALID_OPTIONS[$tag_name]}"
-                    if [[ ",$valid_options," != *",$tag_value,"* ]]; then
-                      echo "::error file=$file::${tag_name}タグの値が無効です: $tag_value"
-                      if [ -z "$error_files" ]; then
-                        error_files="- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
-                      else
-                        error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
-                      fi
-                    else
-                      echo "::notice file=$file::${tag_name}タグ: OK ($tag_value)"
+                    found_valid=false
+                    for opt_name in $(echo "${VALID_OPTIONS[$tag_name]}" | tr ',' ' '); do
+                      tag_value=$(echo "$tag_line" | sed -ne "/${opt_name}/p")
+                      if [ -n "$tag_value" ]; then found_valid=true; break; fi
+                    done
+                    if [ "$found_valid" = false ]; then
+                      error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効"
                     fi
-                  else
-                    echo "::notice file=$file::${tag_name}タグ: OK"
                   fi
                 fi
               done
@@ -165,9 +149,15 @@ jobs:
           1. 上記のエラーをすべて修正してください
           2. 修正完了後、新しいPRを作成してください
           3. または、このPRを再オープンして修正をpushしてください
-
-          🚫 **PR自動クローズします。**
           EOF
           )
           echo "$COMMENT_BODY" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
+
+      # FrontMatterチェックが失敗した場合、PRをクローズ
+      - name: PR Close on Failure
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚫 **PR自動クローズします。**" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
           gh pr close ${{ github.event.pull_request.number }}
