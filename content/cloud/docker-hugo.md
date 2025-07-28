@@ -4,7 +4,7 @@ date = 2024-05-12T00:56:16+09:00
 weight = 1
 draft = false
 categories = ["Server"]
-tags = ["Level:中級", "Type:Knowledge", "Docker"]
+tags = ["Type:Knowledge", "Docker"]
 
 
 +++
