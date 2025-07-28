@@ -62,7 +62,8 @@ jobs:
                 local tag_pattern="${tag_name}:"
                 local tag_line
                 tag_line=$(grep "tags = " "$file" | grep "${tag_pattern}")
-                
+                echo tag_line is   $tag_line
+
                 if [ -z "$tag_line" ]; then
                   echo "::error file=$file::${tag_name}タグが見つかりません"
                   if [ -z "$error_files" ]; then
