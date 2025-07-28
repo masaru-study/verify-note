@@ -40,7 +40,8 @@ git checkout default
 7.  サブモジュールリポジトリの内容を取得します。
 
 ```bash
-git submodule update --init --recursive
+git submodule update --init --recursive --depth 1
+git submodule foreach 'git fetch --depth 1 origin tag 7.6.1 && git checkout 7.6.1'
 ```
 
 8.  実際に変更を加える、ローカルリポジトリ内の post/onamae ブランチを作ります。
