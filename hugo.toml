@@ -39,3 +39,6 @@ relativeURLs = false # ルート相対パス使用
     name = "<i class='fa-brands fa-youtube'></i> Youtube"
     url = 'https://www.youtube.com/@masaru-study'
     weight = 40
+
+[markup.goldmark.renderer]
+  unsafe = true
