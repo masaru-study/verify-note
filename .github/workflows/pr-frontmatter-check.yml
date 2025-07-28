@@ -61,18 +61,18 @@ jobs:
             for file in $(find "./content/$folder" -name '*.md' 2>/dev/null | grep -v '_index.md'); do
               for tag_name in $(echo "$required_tags" | tr ',' ' '); do
                 tag_pattern="${tag_name}:"
-                tag_line=$(cat "$file" | sed -ne "/tags \= \[/p" | sed -ne "/${tag_pattern}/p")
+                tag_line=$(cat "$file" | sed -ne "/tags \= \[/p" | sed -ne "/\"${tag_pattern}/p")
                 if [ -z "$tag_line" ]; then
-                    error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
+                    error_files="$error_files\n- **$file**: ${tag_name}タグが不足"
                 else
                   if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
                     found_valid=false
                     for opt_name in $(echo "${VALID_OPTIONS[$tag_name]}" | tr ',' ' '); do
-                      tag_value=$(echo "$tag_line" | sed -ne "/${opt_name}/p")
+                      tag_value=$(echo "$tag_line" | sed -ne "/:${opt_name}\"/p")
                       if [ -n "$tag_value" ]; then found_valid=true; break; fi
                     done
                     if [ "$found_valid" = false ]; then
-                      error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効"
+                      error_files="$error_files\n- **$file**: ${tag_name}タグの値が無効"
                     fi
                   fi
                 fi
