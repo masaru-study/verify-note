@@ -64,17 +64,13 @@ jobs:
                 tag_line=$(cat "$file" | sed -ne "/tags \= \[/p" | sed -ne "/${tag_pattern}/p")
                 if [ -z "$tag_line" ]; then
                     error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
-                else 
+                else
                   if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
                     found_valid=false
                     for opt_name in $(echo "${VALID_OPTIONS[$tag_name]}" | tr ',' ' '); do
                       tag_value=$(echo "$tag_line" | sed -ne "/${opt_name}/p")
-                      if [ -n "$tag_value" ]; then
-                        found_valid=true
-                        break
-                      fi
+                      if [ -n "$tag_value" ]; then found_valid=true; break; fi
                     done
-                    
                     if [ "$found_valid" = false ]; then
                       error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効"
                     fi
@@ -153,9 +149,15 @@ jobs:
           1. 上記のエラーをすべて修正してください
           2. 修正完了後、新しいPRを作成してください
           3. または、このPRを再オープンして修正をpushしてください
-
-          🚫 **PR自動クローズします。**
           EOF
           )
           echo "$COMMENT_BODY" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
+
+      # FrontMatterチェックが失敗した場合、PRをクローズ
+      - name: PR Close on Failure
+        if: steps.check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🚫 **PR自動クローズします。**" | gh pr comment ${{ github.event.pull_request.number }} --body-file=-
           gh pr close ${{ github.event.pull_request.number }}
