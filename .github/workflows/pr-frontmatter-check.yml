@@ -35,53 +35,72 @@ jobs:
         id: check
         continue-on-error: true
         run: |
+          # チェック設定の定義（フォルダごとの必須タグを指定）
+          declare -A FOLDER_RULES=(
+            ["server"]="Author,Level,Type"
+            ["network"]="Author,Level,Type"
+            ["cloud"]="Author,Level,Type"
+            ["other"]="Author,Type"
+            ["projects"]="Author,Type"
+          )
+
+          # 選択肢の定義
+          declare -A VALID_OPTIONS=(
+            ["Level"]="初級,中級,上級,超上級,？？？"
+            ["Type"]="Handson,Knowledge,Minutes"
+          )
+
+          # フォルダベースのチェック関数
+          check_folder() {
+            local folder="$1"
+            local required_tags="$2"
+            
+            echo "::group::${folder}フォルダのチェック"
+            
+            for file in $(find "./content/$folder" -name '*.md' 2>/dev/null | grep -v '_index.md'); do
+              for tag_name in $(echo "$required_tags" | tr ',' ' '); do
+                local tag_pattern="${tag_name}:"
+                local tag_line
+                tag_line=$(grep "tags = \[.*${tag_pattern}" "$file")
+                
+                if [ -z "$tag_line" ]; then
+                  echo "::error file=$file::${tag_name}タグが見つかりません"
+                  error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
+                else
+                  # 選択肢チェックが必要な場合
+                  if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
+                    local tag_value
+                    tag_value=$(echo "$tag_line" | grep -o "${tag_pattern}[^\"]*" | sed "s/${tag_pattern}//")
+                    
+                    local valid_options="${VALID_OPTIONS[$tag_name]}"
+                    if [[ ",$valid_options," != *",$tag_value,"* ]]; then
+                      echo "::error file=$file::${tag_name}タグの値が無効です: $tag_value"
+                      error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
+                    else
+                      echo "::notice file=$file::${tag_name}タグ: OK ($tag_value)"
+                    fi
+                  else
+                    echo "::notice file=$file::${tag_name}タグ: OK"
+                  fi
+                fi
+              done
+            done
+            
+            echo "::endgroup::"
+          }
+
+          # メイン処理
           error_files=""
           echo "::notice::FrontMatterチェックを開始します"
 
-          # Authorタグのチェック
-          # 対象は、_index.md以外
-          echo "::group::Authorタグのチェック"
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d"); do
-            tag_author=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Author:/p")
-            if [ -z "$tag_author" ]; then
-              echo "::error file=$file::Authorタグが見つかりません"
-              error_files="$error_files\n- ❌ **$file**: Authorタグが不足"
-            else
-              echo "::notice file=$file::Authorタグ: OK"
-            fi
+          # 各フォルダルールに対してチェックを実行
+          for folder in "${!FOLDER_RULES[@]}"; do
+            required_tags="${FOLDER_RULES[$folder]}"
+            check_folder "$folder" "$required_tags"
           done
-          echo "::endgroup::"
-
-          # Levelタグのチェック
-          # 対象は、_index.md以外、Generalフォルダ以外、Otherフォルダ以外、tutorialフォルダ以外、projectsフォルダ以外
-          echo "::group::Levelタグのチェック"
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/other/d" | sed -e "/content\/tutorial/d" | sed -e "/content\/projects/d" ); do
-            tag_level=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Level:/p")
-            if [ -z "$tag_level" ]; then
-              echo "::error file=$file::Levelタグが見つかりません"
-              error_files="$error_files\n- ❌ **$file**: Levelタグが不足"
-            else
-              echo "::notice file=$file::Levelタグ: OK"
-            fi
-          done
-          echo "::endgroup::"
-
-          # Typeタグのチェック
-          # 対象は、_index.md以外、Generalフォルダ以外、tutorialフォルダ以外
-          echo "::group::Typeタグのチェック"
-          for file in $(find ./content/ -name '*.md' | sed -e "/_index.md/d" | sed -e "/content\/general/d" | sed -e "/content\/tutorial/d"); do
-            tag_type=$(cat $file | sed -ne "/tags \= \[/p" | sed -ne "/Type:/p")
-            if [ -z "$tag_type" ]; then
-              echo "::error file=$file::Typeタグが見つかりません"
-              error_files="$error_files\n- ❌ **$file**: Typeタグが不足"
-            else
-              echo "::notice file=$file::Typeタグ: OK"
-            fi
-          done
-          echo "::endgroup::"
 
           # チェック結果の表示
-          if [ -z ${error_files} ]; then
+          if [ -z "$error_files" ]; then
             echo "::notice::✅ すべてのFrontMatterチェックが成功しました"
             exit 0
           else
