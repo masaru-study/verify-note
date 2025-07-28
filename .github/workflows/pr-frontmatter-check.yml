@@ -54,42 +54,24 @@ jobs:
           check_folder() {
             local folder="$1"
             local required_tags="$2"
+            local tag_line
             
             echo "::group::${folder}フォルダのチェック"
             
             for file in $(find "./content/$folder" -name '*.md' 2>/dev/null | grep -v '_index.md'); do
               for tag_name in $(echo "$required_tags" | tr ',' ' '); do
-                local tag_pattern="${tag_name}:"
-                local tag_line
-                tag_line=$(grep "tags = " "$file" | grep "${tag_pattern}")
-                echo tag_line is   $tag_line
-
+                tag_pattern="${tag_name}:"
+                tag_line=$(cat "$file" | sed -ne "/tags \= \[/p" | sed -ne "/${tag_pattern}/p")
                 if [ -z "$tag_line" ]; then
-                  echo "::error file=$file::${tag_name}タグが見つかりません"
-                  if [ -z "$error_files" ]; then
-                    error_files="- ❌ **$file**: ${tag_name}タグが不足"
-                  else
                     error_files="$error_files\n- ❌ **$file**: ${tag_name}タグが不足"
-                  fi
-                else
-                  # 選択肢チェックが必要な場合
+                else 
                   if [[ -n "${VALID_OPTIONS[$tag_name]}" ]]; then
-                    local tag_value
-                    tag_value=$(echo "$tag_line" | grep -o "${tag_pattern}[^\"]*" | sed "s/${tag_pattern}//")
-                    
-                    local valid_options="${VALID_OPTIONS[$tag_name]}"
-                    if [[ ",$valid_options," != *",$tag_value,"* ]]; then
-                      echo "::error file=$file::${tag_name}タグの値が無効です: $tag_value"
-                      if [ -z "$error_files" ]; then
-                        error_files="- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
-                      else
-                        error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効 ($tag_value) - 有効な値: $valid_options"
+                    for opt_name in $(echo "${VALID_OPTIONS[$tag_name]}" | tr ',' ' '); do
+                      tag_value=$(echo "$tag_line" | sed -ne "/${opt_name}/p")
+                      if [ -z "$tag_value" ]; then
+                        error_files="$error_files\n- ❌ **$file**: ${tag_name}タグの値が無効"
                       fi
-                    else
-                      echo "::notice file=$file::${tag_name}タグ: OK ($tag_value)"
-                    fi
-                  else
-                    echo "::notice file=$file::${tag_name}タグ: OK"
+                    done
                   fi
                 fi
               done
