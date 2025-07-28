@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.125.4
-      THEME_VERSION: 7.6.1
+      THEME_VERSION: 6.4.1
 
     # Discord通知有無を別jobに渡す
     outputs:
