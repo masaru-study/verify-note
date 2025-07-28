@@ -119,7 +119,11 @@ jobs:
 
       # Hugo依存関係パッケージのインストール
       - name: Install Dart Sass
-        run: sudo snap install dart-sass --channel=${DART_SASS_VERSION}/stable
+        run: |
+          wget -O ${{ runner.temp }}/dart-sass.tar.gz https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz
+          tar -xzf ${{ runner.temp }}/dart-sass.tar.gz -C ${{ runner.temp }}
+          sudo mv ${{ runner.temp }}/dart-sass /usr/local/
+          sudo ln -s /usr/local/dart-sass/sass /usr/local/bin/sass
 
       # Github Pagesを設定
       - name: Setup Pages
