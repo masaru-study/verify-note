@@ -5,7 +5,7 @@ date = 2025-08-11T01:59:10+09:00
 draft = false
 #weight = 99 # 順番を意図的に変更したい場合は変更する
 categories = ["Network"]
-tags = ["Author:nakata216", "Level:初級", "Type:LT", "CCNP"]
+tags = ["Author:nakata216", "Level:初級", "Type:Knowledge", "CCNP"]
 +++
 
 ## 目次
