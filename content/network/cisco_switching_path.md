@@ -61,7 +61,7 @@ CPUやメモリを使用せず、ASICと呼ばれる専用の集積回路を使�
 ファストスイッチングは、最初の通信はプロセススイッチングと同様の動作を行いますが、パケット転送に必要な情報をキャッシュ（一時的に保存）します。<br>
 そのため、２回目以降の通信はキャッシュから検索（データプレーンでの処理）をすることにより、プロセススイッチングよりも速い転送を可能とします。<br>
 
-![process_switching_and_fast_switching](/img/cisco_switching_path/process_switching_and_fast_switching.png) 
+![process_switching_and_fast_switching](/img/cisco_switching_path/process_switching_and_fast_switching_v2.png) 
 
 
 ## CEFとは
