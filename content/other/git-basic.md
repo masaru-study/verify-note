@@ -44,7 +44,7 @@ Git の用語集と操作イメージ図と共に残します。
 
 ### イメージ図
 
-{{< figure src="/img/git-basic/place.drawio.svg" title="fig-diagram" class="center" width="50%" height="50%" >}}
+{{< figure src="/img/git-basic/place.drawio.svg" title="fig-diagram" class="center" width="100%" height="100%" >}}
 
 ## チーム作業編
 
@@ -60,4 +60,4 @@ Git の用語集と操作イメージ図と共に残します。
 
 ### イメージ図
 
-{{< figure src="/img/git-basic/branch.drawio.svg" title="fig-diagram" class="center" width="50%" height="50%" >}}
+{{< figure src="/img/git-basic/branch.drawio.svg" title="fig-diagram" class="center" width="100%" height="100%" >}}
